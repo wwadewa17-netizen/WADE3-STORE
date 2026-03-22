@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WADE3 STORE - متجر وديع</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700;900&family=Almarai:wght@300;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg-secondary: #fafafa;
+            --fg: #111111;
+            --muted: #666666;
+            --accent: #111111; /* أسود فاتح للعناصر البارزة */
+            --accent-light: #333333;
+            --accent-glow: rgba(0, 0, 0, 0.08);
+            --card: #ffffff;
+            --border: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Almarai', sans-serif;
+        }
+
+        /* Animated Background */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            animation: float 30s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #e0e0e0 0%, transparent 70%);
+            top: -200px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #f0f0f0 0%, transparent 70%);
+            bottom: -150px;
+            left: -100px;
+            animation-delay: -15s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(20px, -20px) scale(1.05); }
+        }
+
+        /* Grid Pattern */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+            background-size: 100px 100px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.85);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.6rem;
+            color: var(--bg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-link {
+            color: var(--muted);
+            transition: color 0.3s ease;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover { color: var(--fg); }
+        .nav-link:hover::after { width: 100%; }
+
+        .social-icon {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--fg);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--fg);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 20px 80px;
+            z-index: 10;
+        }
+
+        .hero-content { text-align: center; max-width: 900px; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 24px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--fg);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: #000;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(1.5); }
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--fg);
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 45px;
+            background: var(--fg);
+            color: var(--bg);
+            font-weight: 800;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            background: var(--accent-light);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 0.85rem;
+            animation: scrollBounce 2.5s ease-in-out infinite;
+        }
+
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(12px); }
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 50px;
+            background: var(--muted);
+            opacity: 0.3;
+        }
+
+        /* Categories Section */
+        .categories {
+            position: relative;
+            z-index: 10;
+            padding: 80px 20px 120px;
+            background: var(--bg-secondary); /* خلفية مختلفة قليلاً للقسم */
+        }
+
+        .section-header { text-align: center; margin-bottom: 60px; }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--fg);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .store-card {
+            position: relative;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            text-decoration: none;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .store-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-image-container {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .store-card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .card-shine {
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .store-card:hover .card-shine {
+            left: 150%;
+        }
+
+        .card-content {
+            padding: 28px;
+            position: relative;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: -16px;
+            right: 24px;
+            padding: 8px 18px;
+            background: var(--fg);
+            color: var(--bg);
+            font-size: 0.7rem;
+            font-weight: 800;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--fg);
+        }
+
+        .card-description {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .card-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--fg);
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: linear-gradient(to left, currentColor 0%, currentColor 100%) no-repeat right bottom / 0 2px;
+        }
+
+        .store-card:hover .card-action {
+            gap: 16px;
+            background-size: 100% 2px;
+            background-position: right bottom;
+        }
+
+        .card-action svg {
+            transition: transform 0.3s ease;
+        }
+
+        .store-card:hover .card-action svg {
+            transform: translateX(-5px);
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: #000;
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat 18s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% { opacity: 0; transform: translateY(100vh) scale(0.5); }
+            10% { opacity: 0.1; }
+            90% { opacity: 0.1; }
+            100% { opacity: 0; transform: translateY(-100vh) scale(1); }
+        }
+
+        /* Footer */
+        .footer {
+            position: relative;
+            z-index: 10;
+            padding: 80px 20px;
+            background: var(--fg);
+            color: var(--bg);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .footer-logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            font-family: 'Almarai', sans-serif;
+        }
+
+        .footer-social a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--bg);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background: var(--bg);
+            color: var(--fg);
+            transform: translateY(-5px);
+        }
+
+        .footer-text { color: rgba(255,255,255,0.6); font-size: 0.9rem; text-align: center; }
+        .footer-divider { width: 60px; height: 2px; background: rgba(255,255,255,0.2); margin: 10px 0; }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 120px 16px 60px; }
+            .cards-grid { grid-template-columns: 1fr; gap: 30px; }
+            .categories { padding: 60px 16px 80px; }
+            .footer { padding: 60px 16px; }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Custom Cursor */
+        .cursor-glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background -->
+    <div class="bg-pattern">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+    </div>
+    <div class="grid-overlay"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
+            <div class="logo-container flex items-center gap-3">
+                <div class="logo-icon font-display">W</div>
+                <div class="hidden sm:block">
+                    <div class="font-bold text-xl font-display tracking-tight">WADE3 STORE</div>
+                    <div class="text-xs text-[var(--muted)]">لبيع المواقع والتطبيقات</div>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="#categories" class="nav-link">المعروضات</a>
+                <a href="https://www.instagram.com/wade3_store/" target="_blank" class="nav-link">تواصل معنا</a>
+            </nav>
+            <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-icon" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge fade-in">
+                <span class="badge-dot"></span>
+                متجر متخصص في بيع المواقع الجاهزة
+            </div>
+            <h1 class="hero-title font-display fade-in" style="transition-delay: 0.1s;">
+                WADE3 STORE
+            </h1>
+            <p class="hero-subtitle fade-in" style="transition-delay: 0.2s;">
+                نصمم لك مواقع إلكترونية احترافية ومتجاوبة، جاهزة للإطلاق الفوري.
+                اختر التصميم الذي يناسب مشروعك وابدأ رحلتك الرقمية معنا.
+            </p>
+            <a href="#categories" class="hero-cta fade-in" style="transition-delay: 0.3s;">
+                اكتشف المواقع المتاحة
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <span>تصفح المعروض</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="section-header fade-in">
+            <span class="section-label">المعرض</span>
+            <h2 class="section-title font-display">قوالب المواقع المتاحة</h2>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Card 1 -->
+            <a href="https://shiqbawe.netlify.app/" target="_blank" class="store-card fade-in" style="transition-delay: 0.1s;">
+                <div class="card-image-container">
+                    <img src="https://files.kick.com/images/user/62843252/profile_image/conversion/f33b3ffd-ca49-4cd7-ac1d-7403c0e1a375-fullsize.webp" alt="Shiqbawe" class="card-image" loading="lazy">
+                    <div class="card-shine"></div>
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">موقع متكامل</span>
+                    <h3 class="card-title font-display">Shiqbawe</h3>
+                    <p class="card-description">
+                        تصميم عصري وجريء يركز على تجربة المستخدم. يتميز بواجهة سلسة وتنسيق مثالي للمحتوى الشخصي والعلامات التجارية الشبابية.
+                    </p>
+                    <div class="card-action">
+                        معاينة حية
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="https://ogxhusni.netlify.app/" target="_blank" class="store-card fade-in" style="transition-delay: 0.2s;">
+                <div class="card-image-container">
+                    <img src="https://files.kick.com/images/user/17385774/profile_image/conversion/f577b87d-e16f-4d79-9914-047c099dd8a2-fullsize.webp" alt="OgX Husni" class="card-image" loading="lazy">
+                    <div class="card-shine"></div>
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">تصميم فاخر</span>
+                    <h3 class="card-title font-display">OgX Husni</h3>
+                    <p class="card-description">
+                        قالب راقٍ وأنيق بتفاصيل دقيقة، مناسب للمعارض الفنية والبورتفوليو الشخصي. يجمع بين البساطة والجاذبية البصرية.
+                    </p>
+                    <div class="card-action">
+                        معاينة حية
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="https://sodry.netlify.app/" target="_blank" class="store-card fade-in" style="transition-delay: 0.3s;">
+                <div class="card-image-container">
+                    <img src="https://files.kick.com/images/user/5642803/profile_image/conversion/b7efb200-9eb1-43a3-9472-a09b57baeb40-fullsize.webp" alt="Sodry" class="card-image" loading="lazy">
+                    <div class="card-shine"></div>
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">أداء سريع</span>
+                    <h3 class="card-title font-display">Sodry</h3>
+                    <p class="card-description">
+                        موقع مينيمالي سريع التحميل ومتجاوب بالكامل. تصميم عملي يركز على إبراز المنتجات والخدمات بأسلوب احترافي ومباشر.
+                    </p>
+                    <div class="card-action">
+                        معاينة حية
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon font-display" style="background: #fff; color: #000;">W</div>
+                <span class="footer-logo-text">WADE3 STORE</span>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-social flex gap-4">
+                <a href="https://www.instagram.com/wade3_store/" target="_blank" aria-label="Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
+            
+            <p class="footer-text">
+                جميع الحقوق محفوظة 2026 WADE3 STORE
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize variables
+        const cursorGlow = document.getElementById('cursorGlow');
+        const header = document.getElementById('header');
+        const particles = document.getElementById('particles');
+
+        // Cursor Logic
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let glowX = mouseX;
+        let glowY = mouseY;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            glowX += (mouseX - glowX) * 0.1;
+            glowY += (mouseY - glowY) * 0.1;
+            
+            if (cursorGlow) {
+                cursorGlow.style.left = glowX + 'px';
+                cursorGlow.style.top = glowY + 'px';
+            }
+            requestAnimationFrame(animateCursor);
+        }
+
+        // Reduced Motion Check
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!prefersReducedMotion) {
+            animateCursor();
+
+            // Generate Particles (Black for white background)
+            for (let i = 0; i < 15; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const size = Math.max(2, Math.random() * 3);
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDelay = Math.random() * 10 + 's';
+                p.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particles.appendChild(p);
+            }
+        }
+
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Header Shadow on Scroll
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+                }
+            });
+        });
+
+        // Card Tilt
+        document.querySelectorAll('.store-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                if (prefersReducedMotion) return;
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 30;
+                const rotateY = (centerX - x) / 30;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
