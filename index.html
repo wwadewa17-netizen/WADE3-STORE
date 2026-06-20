@@ -1,796 +1,498 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WADE3 STORE - متجر وديع</title>
+    <title>Wade3 Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700;900&family=Almarai:wght@300;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        :root {
-            --bg: #ffffff;
-            --bg-secondary: #fafafa;
-            --fg: #111111;
-            --muted: #666666;
-            --accent: #111111; /* أسود فاتح للعناصر البارزة */
-            --accent-light: #333333;
-            --accent-glow: rgba(0, 0, 0, 0.08);
-            --card: #ffffff;
-            --border: rgba(0, 0, 0, 0.08);
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Cairo','Poppins',sans-serif;background:#06060b;color:#fff;overflow-x:hidden;font-weight:600}
+        .font-en{font-family:'Poppins','Cairo',sans-serif}
+        ::selection{background:rgba(99,102,241,.25);color:#c7d2fe}
+        ::-webkit-scrollbar{width:5px;height:5px}
+        ::-webkit-scrollbar-track{background:#06060b}
+        ::-webkit-scrollbar-thumb{background:#2a2a3d;border-radius:10px}
+        ::-webkit-scrollbar-thumb:hover{background:#3b3b55}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        .glass{background:rgba(15,15,25,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.06)}
+        .text-gradient{background:linear-gradient(135deg,#818CF8,#6366F1,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .text-gradient-warm{background:linear-gradient(135deg,#818CF8,#C084FC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background: var(--bg);
-            color: var(--fg);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+        .btn-main{background:linear-gradient(135deg,#6366F1,#7C3AED);box-shadow:0 0 30px -5px rgba(99,102,241,.5),0 0 60px -15px rgba(124,58,237,.3);transition:all .3s cubic-bezier(.4,0,.2,1)}
+        .btn-main:hover{box-shadow:0 0 40px -5px rgba(99,102,241,.7),0 0 80px -15px rgba(124,58,237,.4);transform:translateY(-2px)}
+        .btn-outline{border:1.5px solid rgba(99,102,241,.3);background:rgba(99,102,241,.05);transition:all .3s ease}
+        .btn-outline:hover{border-color:rgba(99,102,241,.6);background:rgba(99,102,241,.1)}
 
-        .font-display {
-            font-family: 'Almarai', sans-serif;
-        }
+        .hero-glow{background:radial-gradient(ellipse 80% 50% at 50% 30%,rgba(99,102,241,.1) 0%,rgba(124,58,237,.05) 40%,transparent 70%)}
+        .grid-bg{background-image:linear-gradient(rgba(99,102,241,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.03) 1px,transparent 1px);background-size:60px 60px}
 
-        /* Animated Background */
-        .bg-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
+        .card{background:rgba(12,12,22,.7);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.05);transition:all .4s cubic-bezier(.4,0,.2,1)}
+        .card:hover{border-color:rgba(99,102,241,.25);transform:translateY(-6px);box-shadow:0 30px 60px -15px rgba(0,0,0,.6),0 0 40px -20px rgba(99,102,241,.15)}
 
-        .gradient-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(120px);
-            animation: float 30s ease-in-out infinite;
-            opacity: 0.6;
-        }
+        .portfolio-wrap{position:relative;overflow:hidden}
+        .portfolio-wrap img{transition:transform .6s cubic-bezier(.4,0,.2,1)}
+        .portfolio-wrap:hover img{transform:scale(1.08)}
+        .portfolio-wrap .grad-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,11,1) 0%,rgba(6,6,11,.4) 40%,transparent 70%);pointer-events:none}
 
-        .orb-1 {
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, #e0e0e0 0%, transparent 70%);
-            top: -200px;
-            right: -100px;
-            animation-delay: 0s;
-        }
+        .hide-bottom::after{content:'';position:absolute;bottom:0;left:0;right:0;height:36px;background:#06060b;z-index:3}
 
-        .orb-2 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, #f0f0f0 0%, transparent 70%);
-            bottom: -150px;
-            left: -100px;
-            animation-delay: -15s;
-        }
+        .nav-bar{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(6,6,11,.75);border-bottom:1px solid rgba(255,255,255,.04)}
+        .price-tag{background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(124,58,237,.1));border:1px solid rgba(99,102,241,.2)}
 
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(20px, -20px) scale(1.05); }
-        }
+        .section-glow-r{position:absolute;width:400px;height:400px;background:rgba(99,102,241,.06);border-radius:50%;filter:blur(120px);pointer-events:none}
+        .section-glow-l{position:absolute;width:300px;height:300px;background:rgba(124,58,237,.05);border-radius:50%;filter:blur(100px);pointer-events:none}
 
-        /* Grid Pattern */
-        .grid-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-            background-size: 100px 100px;
-            z-index: 1;
-            pointer-events: none;
-        }
+        @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+        .anim-up{animation:fadeUp .7s cubic-bezier(.4,0,.2,1) forwards}
+        .d1{animation-delay:.05s;opacity:0}.d2{animation-delay:.15s;opacity:0}.d3{animation-delay:.25s;opacity:0}.d4{animation-delay:.35s;opacity:0}.d5{animation-delay:.45s;opacity:0}
 
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.85);
-            border-bottom: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
+        .mobile-nav{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+        .mobile-nav.active{max-height:350px}
 
-        .header.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-        }
+        .icon-box{transition:all .3s ease}
+        .card:hover .icon-box{transform:scale(1.1)}
+        .social-btn{transition:all .3s cubic-bezier(.4,0,.2,1)}
+        .social-btn:hover{transform:translateY(-3px)}
 
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 1.6rem;
-            color: var(--bg);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
+        input,select,textarea{font-family:'Cairo',sans-serif;font-weight:600}
+        .divider-line{height:1px;background:linear-gradient(to left,transparent,rgba(99,102,241,.2),transparent)}
 
-        .nav-link {
-            color: var(--muted);
-            transition: color 0.3s ease;
-            position: relative;
-            font-weight: 600;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover { color: var(--fg); }
-        .nav-link:hover::after { width: 100%; }
+        .social-card{position:relative;overflow:hidden;border-radius:1.25rem}
+        .social-card::before{content:'';position:absolute;inset:0;opacity:.12;transition:opacity .4s ease}
+        .social-card:hover::before{opacity:.2}
+        .social-card.fb::before{background:linear-gradient(135deg,#1877F2,#0A5DC2)}
+        .social-card.ig::before{background:linear-gradient(135deg,#E1306C,#833AB4,#F77737,#FCAF45)}
+        .social-card .social-icon-wrap{position:relative;z-index:2}
 
-        .social-icon {
-            width: 42px;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            color: var(--fg);
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            background: var(--fg);
-            color: var(--bg);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 140px 20px 80px;
-            z-index: 10;
-        }
-
-        .hero-content { text-align: center; max-width: 900px; }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 24px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--fg);
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-
-        .badge-dot {
-            width: 8px;
-            height: 8px;
-            background: #000;
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.3; transform: scale(1.5); }
-        }
-
-        .hero-title {
-            font-size: clamp(3rem, 10vw, 5.5rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--fg);
-            letter-spacing: -2px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: var(--muted);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-            font-weight: 400;
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 18px 45px;
-            background: var(--fg);
-            color: var(--bg);
-            font-weight: 800;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-            background: var(--accent-light);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            color: var(--muted);
-            font-size: 0.85rem;
-            animation: scrollBounce 2.5s ease-in-out infinite;
-        }
-
-        @keyframes scrollBounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(12px); }
-        }
-
-        .scroll-line {
-            width: 1px;
-            height: 50px;
-            background: var(--muted);
-            opacity: 0.3;
-        }
-
-        /* Categories Section */
-        .categories {
-            position: relative;
-            z-index: 10;
-            padding: 80px 20px 120px;
-            background: var(--bg-secondary); /* خلفية مختلفة قليلاً للقسم */
-        }
-
-        .section-header { text-align: center; margin-bottom: 60px; }
-
-        .section-label {
-            display: inline-block;
-            font-size: 0.8rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            color: var(--fg);
-        }
-
-        /* Cards Grid */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 35px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .store-card {
-            position: relative;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            text-decoration: none;
-            display: block;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-        }
-
-        .store-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(0, 0, 0, 0.15);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-        }
-
-        .card-image-container {
-            position: relative;
-            height: 240px;
-            overflow: hidden;
-            background: #eee;
-        }
-
-        .card-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .store-card:hover .card-image {
-            transform: scale(1.05);
-        }
-
-        .card-shine {
-            position: absolute;
-            top: 0;
-            left: -150%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .store-card:hover .card-shine {
-            left: 150%;
-        }
-
-        .card-content {
-            padding: 28px;
-            position: relative;
-        }
-
-        .card-badge {
-            position: absolute;
-            top: -16px;
-            right: 24px;
-            padding: 8px 18px;
-            background: var(--fg);
-            color: var(--bg);
-            font-size: 0.7rem;
-            font-weight: 800;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            color: var(--fg);
-        }
-
-        .card-description {
-            color: var(--muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 24px;
-        }
-
-        .card-action {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--fg);
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: linear-gradient(to left, currentColor 0%, currentColor 100%) no-repeat right bottom / 0 2px;
-        }
-
-        .store-card:hover .card-action {
-            gap: 16px;
-            background-size: 100% 2px;
-            background-position: right bottom;
-        }
-
-        .card-action svg {
-            transition: transform 0.3s ease;
-        }
-
-        .store-card:hover .card-action svg {
-            transform: translateX(-5px);
-        }
-
-        /* Floating Particles */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 2;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            background: #000;
-            border-radius: 50%;
-            opacity: 0;
-            animation: particleFloat 18s linear infinite;
-        }
-
-        @keyframes particleFloat {
-            0% { opacity: 0; transform: translateY(100vh) scale(0.5); }
-            10% { opacity: 0.1; }
-            90% { opacity: 0.1; }
-            100% { opacity: 0; transform: translateY(-100vh) scale(1); }
-        }
-
-        /* Footer */
-        .footer {
-            position: relative;
-            z-index: 10;
-            padding: 80px 20px;
-            background: var(--fg);
-            color: var(--bg);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 35px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .footer-logo-text {
-            font-size: 1.8rem;
-            font-weight: 800;
-            font-family: 'Almarai', sans-serif;
-        }
-
-        .footer-social a {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            color: var(--bg);
-            transition: all 0.3s ease;
-        }
-        
-        .footer-social a:hover {
-            background: var(--bg);
-            color: var(--fg);
-            transform: translateY(-5px);
-        }
-
-        .footer-text { color: rgba(255,255,255,0.6); font-size: 0.9rem; text-align: center; }
-        .footer-divider { width: 60px; height: 2px; background: rgba(255,255,255,0.2); margin: 10px 0; }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero { padding: 120px 16px 60px; }
-            .cards-grid { grid-template-columns: 1fr; gap: 30px; }
-            .categories { padding: 60px 16px 80px; }
-            .footer { padding: 60px 16px; }
-        }
-
-        /* Reduced Motion */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* Custom Cursor */
-        .cursor-glow {
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, transparent 60%);
-            pointer-events: none;
-            z-index: 0;
-            transform: translate(-50%, -50%);
-        }
+        .order-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:12px;font-size:12px;font-weight:700;transition:all .25s ease}
+        .order-link:hover{transform:translateX(-3px)}
     </style>
 </head>
-<body>
-    <!-- Background -->
-    <div class="bg-pattern">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-    </div>
-    <div class="grid-overlay"></div>
-    <div class="cursor-glow" id="cursorGlow"></div>
-    <div class="particles" id="particles"></div>
+<body class="grid-bg">
 
-    <!-- Header -->
-    <header class="header" id="header">
-        <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
-            <div class="logo-container flex items-center gap-3">
-                <div class="logo-icon font-display">W</div>
-                <div class="hidden sm:block">
-                    <div class="font-bold text-xl font-display tracking-tight">WADE3 STORE</div>
-                    <div class="text-xs text-[var(--muted)]">لبيع المواقع والتطبيقات</div>
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-bar">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl overflow-hidden border-2 border-indigo-500/20 group-hover:border-indigo-500/40 transition-colors">
+                        <img src="https://media.discordapp.net/attachments/1512191583900925972/1517972456240054302/ChatGPT_Image_20_2026_10_20_08_.png?ex=6a383984&is=6a36e804&hm=b67ff1e955d70f00dc137e7915e0ba6332b17b22a082bf7b8546c408670a1643&=&format=webp&quality=lossless&width=431&height=431" alt="Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <span class="font-en text-[17px] font-bold tracking-tight text-white">Wade3</span>
+                        <span class="font-en text-[17px] font-bold tracking-tight text-gradient"> Store</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex items-center gap-1">
+                    <a href="#home" class="nav-link px-4 py-2 rounded-lg text-[13px] font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-200">الرئيسية</a>
+                    <a href="#services" class="nav-link px-4 py-2 rounded-lg text-[13px] font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-200">الخدمات</a>
+                    <a href="#portfolio" class="nav-link px-4 py-2 rounded-lg text-[13px] font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-200">أعمالنا</a>
+                    <a href="#contact" class="nav-link px-4 py-2 rounded-lg text-[13px] font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-200">تواصل معنا</a>
+                </div>
+                <button id="menuToggle" class="md:hidden w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div id="mobileNav" class="mobile-nav md:hidden">
+                <div class="pb-4 pt-3 flex flex-col gap-1 border-t border-white/5">
+                    <a href="#home" class="mob-link px-4 py-3 rounded-xl text-[14px] font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all">الرئيسية</a>
+                    <a href="#services" class="mob-link px-4 py-3 rounded-xl text-[14px] font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all">الخدمات</a>
+                    <a href="#portfolio" class="mob-link px-4 py-3 rounded-xl text-[14px] font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all">أعمالنا</a>
+                    <a href="#contact" class="mob-link px-4 py-3 rounded-xl text-[14px] font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all">تواصل معنا</a>
                 </div>
             </div>
-            <nav class="hidden md:flex items-center gap-10">
-                <a href="#categories" class="nav-link">المعروضات</a>
-                <a href="https://www.instagram.com/wade3_store/" target="_blank" class="nav-link">تواصل معنا</a>
-            </nav>
-            <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-icon" aria-label="Instagram">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-            </a>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge fade-in">
-                <span class="badge-dot"></span>
-                متجر متخصص في بيع المواقع الجاهزة
+    <!-- HERO -->
+    <section id="home" class="relative pt-28 pb-36 px-5 flex flex-col items-center text-center overflow-hidden">
+        <div class="absolute inset-0 hero-glow pointer-events-none"></div>
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent"></div>
+        <div class="section-glow-r" style="top:-100px;right:-100px"></div>
+        <div class="section-glow-l" style="bottom:0;left:-50px"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <div class="anim-up d1 inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-indigo-500/15 bg-indigo-500/5 mb-8">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-500"></span>
+                </span>
+                <span class="text-[11px] font-bold text-indigo-300 uppercase tracking-[.2em]">متاح الآن</span>
             </div>
-            <h1 class="hero-title font-display fade-in" style="transition-delay: 0.1s;">
-                WADE3 STORE
+
+            <h1 class="anim-up d2 text-[clamp(2.5rem,7vw,4.5rem)] font-[900] leading-[1.05] tracking-tight mb-7">
+                <span class="text-white">مرحباً بك في</span><br>
+                <span class="font-en text-gradient">Wade3 Store</span>
             </h1>
-            <p class="hero-subtitle fade-in" style="transition-delay: 0.2s;">
-                نصمم لك مواقع إلكترونية احترافية ومتجاوبة، جاهزة للإطلاق الفوري.
-                اختر التصميم الذي يناسب مشروعك وابدأ رحلتك الرقمية معنا.
+
+            <p class="anim-up d3 text-[17px] font-semibold leading-[1.8] text-slate-400 max-w-xl mx-auto mb-10">
+                نقدّم لك خدمات تصميم المواقع، تطوير التطبيقات، الغناء، وتصميم الصور بجودة عالية وأسعار تنافسية
             </p>
-            <a href="#categories" class="hero-cta fade-in" style="transition-delay: 0.3s;">
-                اكتشف المواقع المتاحة
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
-        <div class="scroll-indicator">
-            <span>تصفح المعروض</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
 
-    <!-- Categories Section -->
-    <section class="categories" id="categories">
-        <div class="section-header fade-in">
-            <span class="section-label">المعرض</span>
-            <h2 class="section-title font-display">قوالب المواقع المتاحة</h2>
-        </div>
-
-        <div class="cards-grid">
-            <!-- Card 1 -->
-            <a href="https://shiqbawe.netlify.app/" target="_blank" class="store-card fade-in" style="transition-delay: 0.1s;">
-                <div class="card-image-container">
-                    <img src="https://files.kick.com/images/user/62843252/profile_image/conversion/f33b3ffd-ca49-4cd7-ac1d-7403c0e1a375-fullsize.webp" alt="Shiqbawe" class="card-image" loading="lazy">
-                    <div class="card-shine"></div>
-                </div>
-                <div class="card-content">
-                    <span class="card-badge">موقع متكامل</span>
-                    <h3 class="card-title font-display">Shiqbawe</h3>
-                    <p class="card-description">
-                        تصميم عصري وجريء يركز على تجربة المستخدم. يتميز بواجهة سلسة وتنسيق مثالي للمحتوى الشخصي والعلامات التجارية الشبابية.
-                    </p>
-                    <div class="card-action">
-                        معاينة حية
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Card 2 -->
-            <a href="https://ogxhusni.netlify.app/" target="_blank" class="store-card fade-in" style="transition-delay: 0.2s;">
-                <div class="card-image-container">
-                    <img src="https://files.kick.com/images/user/17385774/profile_image/conversion/f577b87d-e16f-4d79-9914-047c099dd8a2-fullsize.webp" alt="OgX Husni" class="card-image" loading="lazy">
-                    <div class="card-shine"></div>
-                </div>
-                <div class="card-content">
-                    <span class="card-badge">تصميم فاخر</span>
-                    <h3 class="card-title font-display">OgX Husni</h3>
-                    <p class="card-description">
-                        قالب راقٍ وأنيق بتفاصيل دقيقة، مناسب للمعارض الفنية والبورتفوليو الشخصي. يجمع بين البساطة والجاذبية البصرية.
-                    </p>
-                    <div class="card-action">
-                        معاينة حية
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Card 3 -->
-            <a href="https://sodry.netlify.app/" target="_blank" class="store-card fade-in" style="transition-delay: 0.3s;">
-                <div class="card-image-container">
-                    <img src="https://files.kick.com/images/user/5642803/profile_image/conversion/b7efb200-9eb1-43a3-9472-a09b57baeb40-fullsize.webp" alt="Sodry" class="card-image" loading="lazy">
-                    <div class="card-shine"></div>
-                </div>
-                <div class="card-content">
-                    <span class="card-badge">أداء سريع</span>
-                    <h3 class="card-title font-display">Sodry</h3>
-                    <p class="card-description">
-                        موقع مينيمالي سريع التحميل ومتجاوب بالكامل. تصميم عملي يركز على إبراز المنتجات والخدمات بأسلوب احترافي ومباشر.
-                    </p>
-                    <div class="card-action">
-                        معاينة حية
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <div class="logo-icon font-display" style="background: #fff; color: #000;">W</div>
-                <span class="footer-logo-text">WADE3 STORE</span>
-            </div>
-            
-            <div class="footer-divider"></div>
-            
-            <div class="footer-social flex gap-4">
-                <a href="https://www.instagram.com/wade3_store/" target="_blank" aria-label="Instagram">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
+            <div class="anim-up d4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#services" class="btn-main text-[14px] font-bold text-white px-9 py-4 rounded-2xl inline-flex items-center gap-2.5">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                    تصفّح الخدمات
+                </a>
+                <a href="#portfolio" class="btn-outline text-[14px] font-bold text-indigo-300 px-9 py-4 rounded-2xl inline-flex items-center gap-2.5">
+                    <i data-lucide="eye" class="w-5 h-5"></i>
+                    شاهد أعمالنا
                 </a>
             </div>
-            
-            <p class="footer-text">
-                جميع الحقوق محفوظة 2026 WADE3 STORE
-            </p>
+
+            <div class="anim-up d5 mt-20 grid grid-cols-3 gap-6 max-w-md mx-auto">
+                <div class="text-center">
+                    <div class="font-en text-[28px] font-extrabold text-gradient">6+</div>
+                    <div class="text-[11px] text-slate-500 mt-1 font-bold">خدمات</div>
+                </div>
+                <div class="text-center border-x border-white/5 px-4">
+                    <div class="font-en text-[28px] font-extrabold text-gradient">Fast</div>
+                    <div class="text-[11px] text-slate-500 mt-1 font-bold">تنفيذ سريع</div>
+                </div>
+                <div class="text-center">
+                    <div class="font-en text-[28px] font-extrabold text-gradient">24/7</div>
+                    <div class="text-[11px] text-slate-500 mt-1 font-bold">دعم متواصل</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-line max-w-4xl mx-auto"></div>
+
+    <!-- SERVICES -->
+    <section id="services" class="relative py-28 px-5 overflow-hidden">
+        <div class="section-glow-r" style="top:50%;left:-150px;transform:translateY(-50%)"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/8 bg-white/[.03] mb-5">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-indigo-400"></i>
+                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-[.2em]">خدماتنا</span>
+                </div>
+                <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-[900] tracking-tight mb-4">
+                    ماذا <span class="text-gradient">نقدّم لك</span>
+                </h2>
+                <p class="text-[15px] font-semibold text-slate-500 max-w-lg mx-auto leading-relaxed">اختر الخدمة التي تناسبك — جودة عالية بأسعار مناسبة</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                <!-- S1 -->
+                <div class="card rounded-2xl p-7 group observe-card">
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/15 flex items-center justify-center mb-6">
+                        <i data-lucide="globe" class="w-7 h-7 text-indigo-400"></i>
+                    </div>
+                    <h3 class="text-[18px] font-extrabold mb-2">موقع إلكتروني ويب</h3>
+                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">تصميم وتطوير موقع احترافي بدون قاعدة بيانات</p>
+                    <div class="flex items-center justify-between">
+                        <div class="price-tag px-4 py-2 rounded-xl">
+                            <span class="font-en text-[22px] font-extrabold text-indigo-300">$60</span>
+                        </div>
+                        <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-indigo-400 hover:text-indigo-300 bg-indigo-500/8 border border-indigo-500/15 rounded-xl">
+                            اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- S2 -->
+                <div class="card rounded-2xl p-7 group observe-card">
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/15 flex items-center justify-center mb-6">
+                        <i data-lucide="database" class="w-7 h-7 text-violet-400"></i>
+                    </div>
+                    <h3 class="text-[18px] font-extrabold mb-2">موقع ويب مع داتا بيس</h3>
+                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">موقع متكامل مع قاعدة بيانات ونظام إدارة محتوى</p>
+                    <div class="flex items-center justify-between">
+                        <div class="price-tag px-4 py-2 rounded-xl">
+                            <span class="font-en text-[22px] font-extrabold text-violet-300">$130</span>
+                        </div>
+                        <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-violet-400 hover:text-violet-300 bg-violet-500/8 border border-violet-500/15 rounded-xl">
+                            اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- S3 -->
+                <div class="card rounded-2xl p-7 group observe-card">
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/15 flex items-center justify-center mb-6">
+                        <i data-lucide="smartphone" class="w-7 h-7 text-emerald-400"></i>
+                    </div>
+                    <h3 class="text-[18px] font-extrabold mb-2">موقع في متجر بلاي</h3>
+                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">تطوير ونشر تطبيقك على متجر Google Play</p>
+                    <div class="flex items-center justify-between">
+                        <div class="price-tag px-4 py-2 rounded-xl">
+                            <span class="font-en text-[22px] font-extrabold text-emerald-300">$250</span>
+                        </div>
+                        <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-emerald-400 hover:text-emerald-300 bg-emerald-500/8 border border-emerald-500/15 rounded-xl">
+                            اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- S4 -->
+                <div class="card rounded-2xl p-7 group observe-card">
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/15 flex items-center justify-center mb-6">
+                        <i data-lucide="mic" class="w-7 h-7 text-pink-400"></i>
+                    </div>
+                    <h3 class="text-[18px] font-extrabold mb-2">غناء غنية (دقيقة)</h3>
+                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">غناء أغنية بمدة دقيقة بدون فيديو كليب</p>
+                    <div class="flex items-center justify-between">
+                        <div class="price-tag px-4 py-2 rounded-xl">
+                            <span class="font-en text-[22px] font-extrabold text-pink-300">$10</span>
+                        </div>
+                        <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-pink-400 hover:text-pink-300 bg-pink-500/8 border border-pink-500/15 rounded-xl">
+                            اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- S5 -->
+                <div class="card rounded-2xl p-7 group observe-card">
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-rose-500/10 border border-rose-500/15 flex items-center justify-center mb-6">
+                        <i data-lucide="video" class="w-7 h-7 text-rose-400"></i>
+                    </div>
+                    <h3 class="text-[18px] font-extrabold mb-2">غناء مع فيديو كليب</h3>
+                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">أغنية أكثر من دقيقة مع فيديو كليب وإنتاج كامل</p>
+                    <div class="flex items-center justify-between">
+                        <div class="price-tag px-4 py-2 rounded-xl">
+                            <span class="font-en text-[22px] font-extrabold text-rose-300">$50</span>
+                        </div>
+                        <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-rose-400 hover:text-rose-300 bg-rose-500/8 border border-rose-500/15 rounded-xl">
+                            اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- S6 -->
+                <div class="card rounded-2xl p-7 group observe-card">
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/15 flex items-center justify-center mb-6">
+                        <i data-lucide="image" class="w-7 h-7 text-amber-400"></i>
+                    </div>
+                    <h3 class="text-[18px] font-extrabold mb-2">تصميم بنر / لوقو</h3>
+                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">تصميم بنر أو لوجو أو أي صورة احترافية</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="price-tag px-4 py-2 rounded-xl">
+                                <span class="font-en text-[22px] font-extrabold text-amber-300">$10</span>
+                            </div>
+                            <span class="text-[11px] text-slate-600 font-bold">/ 5 صور</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Info -->
+            <div class="mt-8 glass rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="info" class="w-5 h-5 text-indigo-400"></i>
+                    </div>
+                    <span class="text-[14px] font-bold text-slate-300">الطلب عن طريق فيسبوك أو انستاگرام</span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-btn text-[11px] font-bold text-blue-400 px-4 py-2.5 rounded-xl bg-blue-500/8 border border-blue-500/15 inline-flex items-center gap-1.5">
+                        <i data-lucide="facebook" class="w-3.5 h-3.5"></i> فيسبوك
+                    </a>
+                    <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-btn text-[11px] font-bold text-pink-400 px-4 py-2.5 rounded-xl bg-pink-500/8 border border-pink-500/15 inline-flex items-center gap-1.5">
+                        <i data-lucide="instagram" class="w-3.5 h-3.5"></i> انستا
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-line max-w-4xl mx-auto"></div>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="relative py-28 px-5 overflow-hidden">
+        <div class="section-glow-l" style="top:30%;right:-100px"></div>
+        <div class="section-glow-r" style="bottom:10%;left:-120px"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/8 bg-white/[.03] mb-5">
+                    <i data-lucide="trophy" class="w-4 h-4 text-indigo-400"></i>
+                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-[.2em]">أعمالنا</span>
+                </div>
+                <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-[900] tracking-tight mb-4">
+                    نماذج من <span class="text-gradient-warm">إبداعنا</span>
+                </h2>
+                <p class="text-[15px] font-semibold text-slate-500 max-w-lg mx-auto leading-relaxed">بعض الأعمال التي نفّذناها بكل احترافية</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Work 1 -->
+                <div class="card rounded-2xl overflow-hidden group observe-card">
+                    <div class="portfolio-wrap hide-bottom" style="aspect-ratio:16/9">
+                        <img src="https://media.discordapp.net/attachments/1512191583900925972/1518005464611426314/image.png?ex=6a385841&is=6a3706c1&hm=3cc6d5f5c7ae11c2cb4480a50b1f2b9d679c0c01a935a459f8a7564c7641a2e2&=&format=webp&quality=lossless&width=763&height=431" alt="متجر الكتروني" class="w-full h-full object-cover">
+                        <div class="grad-overlay"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,.5)]"></span>
+                            <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-[.15em]">مكتمل</span>
+                        </div>
+                        <h3 class="text-[16px] font-extrabold">متجر إلكتروني</h3>
+                        <p class="text-[12px] text-slate-600 mt-1 font-semibold">تصميم واجهة متجر احترافية وجذابة</p>
+                    </div>
+                </div>
+
+                <!-- Work 2 -->
+                <div class="card rounded-2xl overflow-hidden group observe-card">
+                    <div class="portfolio-wrap hide-bottom" style="aspect-ratio:16/9">
+                        <img src="https://media.discordapp.net/attachments/1512191583900925972/1518005465106087946/image.png?ex=6a385842&is=6a3706c2&hm=a7a335ce9dcd65c46deb3275c20ee51452e8ade58e94b06d9ec6597bc82b8496&=&format=webp&quality=lossless&width=763&height=431" alt="موقع استريمر" class="w-full h-full object-cover">
+                        <div class="grad-overlay"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,.5)]"></span>
+                            <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-[.15em]">مكتمل</span>
+                        </div>
+                        <h3 class="text-[16px] font-extrabold">موقع إلكتروني لاستريمر</h3>
+                        <p class="text-[12px] text-slate-600 mt-1 font-semibold">تصميم عصري مخصص للبث المباشر</p>
+                    </div>
+                </div>
+
+                <!-- Work 3 -->
+                <div class="card rounded-2xl overflow-hidden group observe-card">
+                    <div class="portfolio-wrap hide-bottom" style="aspect-ratio:16/9">
+                        <img src="https://media.discordapp.net/attachments/1512191583900925972/1518005522215866498/5c498fd5-6168-4074-ac3e-82ca307241d4.png?ex=6a38584f&is=6a3706cf&hm=44ffd88edab591bffb2a919043ef3a383ed58dcad3f5696d80032d0ad0c3d70b&=&format=webp&quality=lossless&width=816&height=459" alt="فيديو كليب" class="w-full h-full object-cover">
+                        <div class="grad-overlay"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,.5)]"></span>
+                            <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-[.15em]">مكتمل</span>
+                        </div>
+                        <h3 class="text-[16px] font-extrabold">أغنية وفيديو كليب</h3>
+                        <p class="text-[12px] text-slate-600 mt-1 font-semibold">إنتاج غناء مع فيديو كليب احترافي</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-line max-w-4xl mx-auto"></div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="relative py-28 px-5 overflow-hidden">
+        <div class="section-glow-r" style="top:20%;right:-80px"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/8 bg-white/[.03] mb-5">
+                    <i data-lucide="send" class="w-4 h-4 text-indigo-400"></i>
+                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-[.2em]">تواصل معنا</span>
+                </div>
+                <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-[900] tracking-tight mb-4">
+                    تابعنا على <span class="text-gradient">منصاتنا</span>
+                </h2>
+                <p class="text-[15px] font-semibold text-slate-500 max-w-lg mx-auto leading-relaxed">تواصل معنا عبر فيسبوك أو انستاگرام واطلب خدمتك</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Facebook Card -->
+                <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-card fb card rounded-2xl overflow-hidden group block">
+                    <div class="relative">
+                        <!-- FB Cover Image -->
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80" alt="Facebook" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c16] via-[#0c0c16]/60 to-transparent"></div>
+                        </div>
+                        <!-- FB Content -->
+                        <div class="social-icon-wrap px-7 pb-7 -mt-12 relative z-10">
+                            <div class="w-20 h-20 rounded-2xl bg-[#1877F2]/15 border-2 border-[#1877F2]/30 flex items-center justify-center mb-4 group-hover:bg-[#1877F2]/25 group-hover:border-[#1877F2]/50 transition-all duration-300">
+                                <i data-lucide="facebook" class="w-10 h-10 text-blue-400"></i>
+                            </div>
+                            <h3 class="text-[20px] font-extrabold mb-1.5">فيسبوك</h3>
+                            <p class="text-[13px] text-slate-500 font-semibold mb-5">تابعنا على صفحتنا وتواصل معنا مباشرة</p>
+                            <div class="flex items-center gap-2 text-[12px] font-bold text-blue-400">
+                                <span>زيارة الصفحة</span>
+                                <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Instagram Card -->
+                <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-card ig card rounded-2xl overflow-hidden group block">
+                    <div class="relative">
+                        <!-- IG Cover Image -->
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&q=80" alt="Instagram" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c16] via-[#0c0c16]/60 to-transparent"></div>
+                        </div>
+                        <!-- IG Content -->
+                        <div class="social-icon-wrap px-7 pb-7 -mt-12 relative z-10">
+                            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#F77737]/15 via-[#E1306C]/15 to-[#833AB4]/15 border-2 border-[#E1306C]/30 flex items-center justify-center mb-4 group-hover:from-[#F77737]/25 group-hover:via-[#E1306C]/25 group-hover:to-[#833AB4]/25 group-hover:border-[#E1306C]/50 transition-all duration-300">
+                                <i data-lucide="instagram" class="w-10 h-10 text-pink-400"></i>
+                            </div>
+                            <h3 class="text-[20px] font-extrabold mb-1.5">انستاگرام</h3>
+                            <p class="text-[13px] text-slate-500 font-semibold mb-5">تابعنا وشاهد أحدث أعمالنا ومشاريعنا</p>
+                            <div class="flex items-center gap-2 text-[12px] font-bold text-pink-400">
+                                <span class="font-en" dir="ltr">@wade3_store</span>
+                                <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/[.04] py-10 px-5">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg overflow-hidden border border-white/10">
+                        <img src="https://media.discordapp.net/attachments/1512191583900925972/1517972456240054302/ChatGPT_Image_20_2026_10_20_08_.png?ex=6a383984&is=6a36e804&hm=b67ff1e955d70f00dc137e7915e0ba6332b17b22a082bf7b8546c408670a1643&=&format=webp&quality=lossless&width=431&height=431" alt="Logo" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[13px] font-bold text-slate-600">© 2025 <span class="font-en">Wade3 Store</span>. جميع الحقوق محفوظة.</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover:text-blue-400 hover:border-blue-500/25">
+                        <i data-lucide="facebook" class="w-[18px] h-[18px]"></i>
+                    </a>
+                    <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover:text-pink-400 hover:border-pink-500/25">
+                        <i data-lucide="instagram" class="w-[18px] h-[18px]"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- Back to Top -->
+    <button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-7 left-7 w-11 h-11 rounded-xl glass flex items-center justify-center text-slate-500 hover:text-indigo-400 hover:border-indigo-500/25 transition-all duration-300 opacity-0 pointer-events-none z-40">
+        <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    </button>
+
     <script>
-        // Initialize variables
-        const cursorGlow = document.getElementById('cursorGlow');
-        const header = document.getElementById('header');
-        const particles = document.getElementById('particles');
+        lucide.createIcons();
 
-        // Cursor Logic
-        let mouseX = window.innerWidth / 2;
-        let mouseY = window.innerHeight / 2;
-        let glowX = mouseX;
-        let glowY = mouseY;
+        const menuToggle=document.getElementById('menuToggle'),mobileNav=document.getElementById('mobileNav');
+        let menuOpen=false;
+        menuToggle.addEventListener('click',()=>{menuOpen=!menuOpen;mobileNav.classList.toggle('active',menuOpen)});
+        document.querySelectorAll('.mob-link').forEach(l=>{l.addEventListener('click',()=>{menuOpen=false;mobileNav.classList.remove('active')})});
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
 
-        function animateCursor() {
-            glowX += (mouseX - glowX) * 0.1;
-            glowY += (mouseY - glowY) * 0.1;
-            
-            if (cursorGlow) {
-                cursorGlow.style.left = glowX + 'px';
-                cursorGlow.style.top = glowY + 'px';
-            }
-            requestAnimationFrame(animateCursor);
-        }
+        const topBtn=document.getElementById('topBtn');
+        window.addEventListener('scroll',()=>{topBtn.style.opacity=window.scrollY>500?'1':'0';topBtn.style.pointerEvents=window.scrollY>500?'auto':'none'});
 
-        // Reduced Motion Check
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+        document.querySelectorAll('.observe-card').forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition=`opacity .6s cubic-bezier(.4,0,.2,1) ${i*.08}s,transform .6s cubic-bezier(.4,0,.2,1) ${i*.08}s,border-color .4s ease,box-shadow .4s ease`;obs.observe(el)});
 
-        if (!prefersReducedMotion) {
-            animateCursor();
-
-            // Generate Particles (Black for white background)
-            for (let i = 0; i < 15; i++) {
-                const p = document.createElement('div');
-                p.className = 'particle';
-                const size = Math.max(2, Math.random() * 3);
-                p.style.width = size + 'px';
-                p.style.height = size + 'px';
-                p.style.left = Math.random() * 100 + '%';
-                p.style.animationDelay = Math.random() * 10 + 's';
-                p.style.animationDuration = (15 + Math.random() * 10) + 's';
-                particles.appendChild(p);
-            }
-        }
-
-        // Scroll Reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.15 });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        // Header Shadow on Scroll
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-                }
-            });
-        });
-
-        // Card Tilt
-        document.querySelectorAll('.store-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                if (prefersReducedMotion) return;
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 30;
-                const rotateY = (centerX - x) / 30;
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
-        });
+        const secs=document.querySelectorAll('section[id]');
+        window.addEventListener('scroll',()=>{let cur='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id});document.querySelectorAll('.nav-link').forEach(l=>{const isActive=l.getAttribute('href')===`#${cur}`;l.classList.toggle('text-white',isActive);l.classList.toggle('bg-white/5',isActive);l.classList.toggle('text-slate-400',!isActive)})});
     </script>
 </body>
 </html>
