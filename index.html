@@ -65,13 +65,47 @@
 
         .social-card{position:relative;overflow:hidden;border-radius:1.25rem}
         .social-card::before{content:'';position:absolute;inset:0;opacity:.12;transition:opacity .4s ease}
-        .social-card:hover::before{opacity:.2}
+        .social-card:hover::before{opacity:.22}
         .social-card.fb::before{background:linear-gradient(135deg,#1877F2,#0A5DC2)}
         .social-card.ig::before{background:linear-gradient(135deg,#E1306C,#833AB4,#F77737,#FCAF45)}
-        .social-card .social-icon-wrap{position:relative;z-index:2}
+        .social-card.tt::before{background:linear-gradient(135deg,#010101,#25F4EE,#FE2C55)}
+        .social-card.web::before{background:linear-gradient(135deg,#6366F1,#7C3AED)}
+        .social-card.yt::before{background:linear-gradient(135deg,#FF0000,#CC0000)}
+        .social-card .sc-wrap{position:relative;z-index:2}
 
         .order-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:12px;font-size:12px;font-weight:700;transition:all .25s ease}
         .order-link:hover{transform:translateX(-3px)}
+
+        .note-banner{background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(124,58,237,.06));border:1px solid rgba(99,102,241,.12)}
+
+        .icon-fb{color:#1877F2}
+        .icon-ig{color:#E4405F}
+        .icon-tt{color:#fff}
+        .icon-web{color:#818CF8}
+        .icon-yt{color:#FF0000}
+
+        .bg-fb{background:rgba(24,119,242,.1);border-color:rgba(24,119,242,.2)}
+        .bg-fb-hover:hover{background:rgba(24,119,242,.2);border-color:rgba(24,119,242,.35)}
+        .bg-ig{background:rgba(228,64,95,.1);border-color:rgba(228,64,95,.2)}
+        .bg-ig-hover:hover{background:rgba(228,64,95,.2);border-color:rgba(228,64,95,.35)}
+        .bg-tt{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+        .bg-tt-hover:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2)}
+        .bg-web{background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.2)}
+        .bg-web-hover:hover{background:rgba(99,102,241,.2);border-color:rgba(99,102,241,.35)}
+        .bg-yt{background:rgba(255,0,0,.08);border-color:rgba(255,0,0,.15)}
+        .bg-yt-hover:hover{background:rgba(255,0,0,.16);border-color:rgba(255,0,0,.3)}
+
+        .txt-fb{color:#60a5fa}
+        .txt-ig{color:#f472b6}
+        .txt-tt{color:#e2e8f0}
+        .txt-web{color:#818cf8}
+        .txt-yt{color:#f87171}
+
+        .hover-fb:hover{color:#60a5fa;border-color:rgba(96,165,250,.2);background:rgba(96,165,250,.06)}
+        .hover-ig:hover{color:#f472b6;border-color:rgba(244,114,182,.2);background:rgba(244,114,182,.06)}
+        .hover-tt:hover{color:#fff;border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.06)}
+        .hover-web:hover{color:#818cf8;border-color:rgba(129,140,248,.2);background:rgba(129,140,248,.06)}
+        .hover-yt:hover{color:#f87171;border-color:rgba(248,113,113,.2);background:rgba(248,113,113,.06)}
     </style>
 </head>
 <body class="grid-bg">
@@ -111,7 +145,7 @@
     </nav>
 
     <!-- HERO -->
-    <section id="home" class="relative pt-28 pb-36 px-5 flex flex-col items-center text-center overflow-hidden">
+    <section id="home" class="relative pt-28 pb-32 px-5 flex flex-col items-center text-center overflow-hidden">
         <div class="absolute inset-0 hero-glow pointer-events-none"></div>
         <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent"></div>
         <div class="section-glow-r" style="top:-100px;right:-100px"></div>
@@ -132,7 +166,7 @@
             </h1>
 
             <p class="anim-up d3 text-[17px] font-semibold leading-[1.8] text-slate-400 max-w-xl mx-auto mb-10">
-                نقدّم لك خدمات تصميم المواقع، تطوير التطبيقات، الغناء، وتصميم الصور بجودة عالية وأسعار تنافسية
+                خدمات تصميم المواقع الإلكترونية، تطبيقات متجر قوقل، الغناء والإنتاج الموسيقي — بجودة احترافية وأسعار مناسبة
             </p>
 
             <div class="anim-up d4 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -140,15 +174,15 @@
                     <i data-lucide="layers" class="w-5 h-5"></i>
                     تصفّح الخدمات
                 </a>
-                <a href="#portfolio" class="btn-outline text-[14px] font-bold text-indigo-300 px-9 py-4 rounded-2xl inline-flex items-center gap-2.5">
-                    <i data-lucide="eye" class="w-5 h-5"></i>
-                    شاهد أعمالنا
+                <a href="#contact" class="btn-outline text-[14px] font-bold text-indigo-300 px-9 py-4 rounded-2xl inline-flex items-center gap-2.5">
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                    تواصل معنا
                 </a>
             </div>
 
-            <div class="anim-up d5 mt-20 grid grid-cols-3 gap-6 max-w-md mx-auto">
+            <div class="anim-up d5 mt-16 grid grid-cols-3 gap-6 max-w-md mx-auto">
                 <div class="text-center">
-                    <div class="font-en text-[28px] font-extrabold text-gradient">6+</div>
+                    <div class="font-en text-[28px] font-extrabold text-gradient">5+</div>
                     <div class="text-[11px] text-slate-500 mt-1 font-bold">خدمات</div>
                 </div>
                 <div class="text-center border-x border-white/5 px-4">
@@ -157,7 +191,7 @@
                 </div>
                 <div class="text-center">
                     <div class="font-en text-[28px] font-extrabold text-gradient">24/7</div>
-                    <div class="text-[11px] text-slate-500 mt-1 font-bold">دعم متواصل</div>
+                    <div class="text-[11px] text-slate-500 mt-1 font-bold">دعم فني</div>
                 </div>
             </div>
         </div>
@@ -182,17 +216,16 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-
                 <!-- S1 -->
                 <div class="card rounded-2xl p-7 group observe-card">
                     <div class="icon-box w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/15 flex items-center justify-center mb-6">
                         <i data-lucide="globe" class="w-7 h-7 text-indigo-400"></i>
                     </div>
-                    <h3 class="text-[18px] font-extrabold mb-2">موقع إلكتروني ويب</h3>
-                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">تصميم وتطوير موقع احترافي بدون قاعدة بيانات</p>
+                    <h3 class="text-[18px] font-extrabold mb-2">موقع إلكتروني بسيط</h3>
+                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">تصميم موقع أنيق وبسيط وسريع التنفيذ</p>
                     <div class="flex items-center justify-between">
                         <div class="price-tag px-4 py-2 rounded-xl">
-                            <span class="font-en text-[22px] font-extrabold text-indigo-300">$60</span>
+                            <span class="font-en text-[22px] font-extrabold text-indigo-300">50 ₪</span>
                         </div>
                         <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-indigo-400 hover:text-indigo-300 bg-indigo-500/8 border border-indigo-500/15 rounded-xl">
                             اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
@@ -203,13 +236,13 @@
                 <!-- S2 -->
                 <div class="card rounded-2xl p-7 group observe-card">
                     <div class="icon-box w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/15 flex items-center justify-center mb-6">
-                        <i data-lucide="database" class="w-7 h-7 text-violet-400"></i>
+                        <i data-lucide="monitor" class="w-7 h-7 text-violet-400"></i>
                     </div>
-                    <h3 class="text-[18px] font-extrabold mb-2">موقع ويب مع داتا بيس</h3>
-                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">موقع متكامل مع قاعدة بيانات ونظام إدارة محتوى</p>
+                    <h3 class="text-[18px] font-extrabold mb-2">موقع إلكتروني احترافي أونلاين</h3>
+                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">موقع متكامل مع جميع المميزات الاحترافية</p>
                     <div class="flex items-center justify-between">
                         <div class="price-tag px-4 py-2 rounded-xl">
-                            <span class="font-en text-[22px] font-extrabold text-violet-300">$130</span>
+                            <span class="font-en text-[22px] font-extrabold text-violet-300">150 ₪</span>
                         </div>
                         <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-violet-400 hover:text-violet-300 bg-violet-500/8 border border-violet-500/15 rounded-xl">
                             اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
@@ -222,11 +255,11 @@
                     <div class="icon-box w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/15 flex items-center justify-center mb-6">
                         <i data-lucide="smartphone" class="w-7 h-7 text-emerald-400"></i>
                     </div>
-                    <h3 class="text-[18px] font-extrabold mb-2">موقع في متجر بلاي</h3>
+                    <h3 class="text-[18px] font-extrabold mb-2">موقع إلكتروني في متجر قوقل</h3>
                     <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">تطوير ونشر تطبيقك على متجر Google Play</p>
                     <div class="flex items-center justify-between">
                         <div class="price-tag px-4 py-2 rounded-xl">
-                            <span class="font-en text-[22px] font-extrabold text-emerald-300">$250</span>
+                            <span class="font-en text-[22px] font-extrabold text-emerald-300">350 ₪</span>
                         </div>
                         <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-emerald-400 hover:text-emerald-300 bg-emerald-500/8 border border-emerald-500/15 rounded-xl">
                             اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
@@ -239,11 +272,11 @@
                     <div class="icon-box w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/15 flex items-center justify-center mb-6">
                         <i data-lucide="mic" class="w-7 h-7 text-pink-400"></i>
                     </div>
-                    <h3 class="text-[18px] font-extrabold mb-2">غناء غنية (دقيقة)</h3>
-                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">غناء أغنية بمدة دقيقة بدون فيديو كليب</p>
+                    <h3 class="text-[18px] font-extrabold mb-2">أغنية كاملة — دقيقة واحدة</h3>
+                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">غناء متكامل مع موسيقى وكلمات وكل شيء بجودة عالية</p>
                     <div class="flex items-center justify-between">
                         <div class="price-tag px-4 py-2 rounded-xl">
-                            <span class="font-en text-[22px] font-extrabold text-pink-300">$10</span>
+                            <span class="font-en text-[22px] font-extrabold text-pink-300">40 ₪</span>
                         </div>
                         <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-pink-400 hover:text-pink-300 bg-pink-500/8 border border-pink-500/15 rounded-xl">
                             اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
@@ -256,11 +289,11 @@
                     <div class="icon-box w-14 h-14 rounded-2xl bg-rose-500/10 border border-rose-500/15 flex items-center justify-center mb-6">
                         <i data-lucide="video" class="w-7 h-7 text-rose-400"></i>
                     </div>
-                    <h3 class="text-[18px] font-extrabold mb-2">غناء مع فيديو كليب</h3>
-                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">أغنية أكثر من دقيقة مع فيديو كليب وإنتاج كامل</p>
+                    <h3 class="text-[18px] font-extrabold mb-2">أغنية مع فيديو كليب</h3>
+                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">أغنية كاملة مع فيديو كليب وكلمات والمدة من اختيارك</p>
                     <div class="flex items-center justify-between">
                         <div class="price-tag px-4 py-2 rounded-xl">
-                            <span class="font-en text-[22px] font-extrabold text-rose-300">$50</span>
+                            <span class="font-en text-[22px] font-extrabold text-rose-300">90 ₪</span>
                         </div>
                         <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-rose-400 hover:text-rose-300 bg-rose-500/8 border border-rose-500/15 rounded-xl">
                             اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
@@ -268,39 +301,63 @@
                     </div>
                 </div>
 
-                <!-- S6 -->
-                <div class="card rounded-2xl p-7 group observe-card">
-                    <div class="icon-box w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/15 flex items-center justify-center mb-6">
-                        <i data-lucide="image" class="w-7 h-7 text-amber-400"></i>
+                <!-- Note Card -->
+                <div class="card rounded-2xl p-7 group observe-card flex flex-col justify-center">
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/15 flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-7 h-7 text-indigo-400"></i>
                     </div>
-                    <h3 class="text-[18px] font-extrabold mb-2">تصميم بنر / لوقو</h3>
-                    <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">تصميم بنر أو لوجو أو أي صورة احترافية</p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <div class="price-tag px-4 py-2 rounded-xl">
-                                <span class="font-en text-[22px] font-extrabold text-amber-300">$10</span>
+                    <h3 class="text-[18px] font-extrabold mb-3">ضمان الجودة</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-emerald-500/15 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="w-3 h-3 text-emerald-400"></i>
                             </div>
-                            <span class="text-[11px] text-slate-600 font-bold">/ 5 صور</span>
+                            <span class="text-[13px] font-semibold text-slate-400">دعم فني 24 ساعة لجميع المنتجات</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-emerald-500/15 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="w-3 h-3 text-emerald-400"></i>
+                            </div>
+                            <span class="text-[13px] font-semibold text-slate-400">التسليم من يوم إلى 3 أيام</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-emerald-500/15 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="w-3 h-3 text-emerald-400"></i>
+                            </div>
+                            <span class="text-[13px] font-semibold text-slate-400">جودة عالية بأسعار تنافسية</span>
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <!-- Info -->
-            <div class="mt-8 glass rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <!-- Info Banner -->
+            <div class="mt-8 note-banner rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-center gap-5">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center flex-shrink-0">
                         <i data-lucide="info" class="w-5 h-5 text-indigo-400"></i>
                     </div>
-                    <span class="text-[14px] font-bold text-slate-300">الطلب عن طريق فيسبوك أو انستاگرام</span>
+                    <span class="text-[14px] font-bold text-slate-300">الطلب عن طريق منصات التواصل التالية</span>
                 </div>
-                <div class="flex items-center gap-2.5">
-                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-btn text-[11px] font-bold text-blue-400 px-4 py-2.5 rounded-xl bg-blue-500/8 border border-blue-500/15 inline-flex items-center gap-1.5">
-                        <i data-lucide="facebook" class="w-3.5 h-3.5"></i> فيسبوك
+                <div class="flex items-center gap-2.5 flex-wrap justify-center">
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-btn text-[11px] font-bold txt-fb px-4 py-2.5 rounded-xl bg-fb border bg-fb-hover inline-flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        فيسبوك
                     </a>
-                    <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-btn text-[11px] font-bold text-pink-400 px-4 py-2.5 rounded-xl bg-pink-500/8 border border-pink-500/15 inline-flex items-center gap-1.5">
-                        <i data-lucide="instagram" class="w-3.5 h-3.5"></i> انستا
+                    <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-btn text-[11px] font-bold txt-ig px-4 py-2.5 rounded-xl bg-ig border bg-ig-hover inline-flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        انستا
+                    </a>
+                    <a href="https://www.tiktok.com/@wade3_store1" target="_blank" class="social-btn text-[11px] font-bold txt-tt px-4 py-2.5 rounded-xl bg-tt border bg-tt-hover inline-flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .56.04.82.11V9.02a6.37 6.37 0 0 0-.82-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.16 8.16 0 0 0 4.76 1.52V6.79a4.85 4.85 0 0 1-1-.1z"/></svg>
+                        تيك توك
+                    </a>
+                    <a href="https://wade3-store.netlify.app/" target="_blank" class="social-btn text-[11px] font-bold txt-web px-4 py-2.5 rounded-xl bg-web border bg-web-hover inline-flex items-center gap-1.5">
+                        <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+                        موقع
+                    </a>
+                    <a href="https://www.youtube.com/@wade3store" target="_blank" class="social-btn text-[11px] font-bold txt-yt px-4 py-2.5 rounded-xl bg-yt border bg-yt-hover inline-flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        يوتيوب
                     </a>
                 </div>
             </div>
@@ -327,7 +384,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Work 1 -->
                 <div class="card rounded-2xl overflow-hidden group observe-card">
                     <div class="portfolio-wrap hide-bottom" style="aspect-ratio:16/9">
                         <img src="https://media.discordapp.net/attachments/1512191583900925972/1518005464611426314/image.png?ex=6a385841&is=6a3706c1&hm=3cc6d5f5c7ae11c2cb4480a50b1f2b9d679c0c01a935a459f8a7564c7641a2e2&=&format=webp&quality=lossless&width=763&height=431" alt="متجر الكتروني" class="w-full h-full object-cover">
@@ -343,7 +399,6 @@
                     </div>
                 </div>
 
-                <!-- Work 2 -->
                 <div class="card rounded-2xl overflow-hidden group observe-card">
                     <div class="portfolio-wrap hide-bottom" style="aspect-ratio:16/9">
                         <img src="https://media.discordapp.net/attachments/1512191583900925972/1518005465106087946/image.png?ex=6a385842&is=6a3706c2&hm=a7a335ce9dcd65c46deb3275c20ee51452e8ade58e94b06d9ec6597bc82b8496&=&format=webp&quality=lossless&width=763&height=431" alt="موقع استريمر" class="w-full h-full object-cover">
@@ -359,7 +414,6 @@
                     </div>
                 </div>
 
-                <!-- Work 3 -->
                 <div class="card rounded-2xl overflow-hidden group observe-card">
                     <div class="portfolio-wrap hide-bottom" style="aspect-ratio:16/9">
                         <img src="https://media.discordapp.net/attachments/1512191583900925972/1518005522215866498/5c498fd5-6168-4074-ac3e-82ca307241d4.png?ex=6a38584f&is=6a3706cf&hm=44ffd88edab591bffb2a919043ef3a383ed58dcad3f5696d80032d0ad0c3d70b&=&format=webp&quality=lossless&width=816&height=459" alt="فيديو كليب" class="w-full h-full object-cover">
@@ -384,7 +438,7 @@
     <section id="contact" class="relative py-28 px-5 overflow-hidden">
         <div class="section-glow-r" style="top:20%;right:-80px"></div>
 
-        <div class="relative z-10 max-w-4xl mx-auto">
+        <div class="relative z-10 max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/8 bg-white/[.03] mb-5">
                     <i data-lucide="send" class="w-4 h-4 text-indigo-400"></i>
@@ -393,27 +447,25 @@
                 <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-[900] tracking-tight mb-4">
                     تابعنا على <span class="text-gradient">منصاتنا</span>
                 </h2>
-                <p class="text-[15px] font-semibold text-slate-500 max-w-lg mx-auto leading-relaxed">تواصل معنا عبر فيسبوك أو انستاگرام واطلب خدمتك</p>
+                <p class="text-[15px] font-semibold text-slate-500 max-w-lg mx-auto leading-relaxed">تواصل معنا عبر أي منصة واطلب خدمتك مباشرة</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <!-- Facebook Card -->
+                <!-- Facebook -->
                 <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-card fb card rounded-2xl overflow-hidden group block">
                     <div class="relative">
-                        <!-- FB Cover Image -->
-                        <div class="h-44 overflow-hidden relative">
+                        <div class="h-40 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80" alt="Facebook" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c16] via-[#0c0c16]/60 to-transparent"></div>
                         </div>
-                        <!-- FB Content -->
-                        <div class="social-icon-wrap px-7 pb-7 -mt-12 relative z-10">
-                            <div class="w-20 h-20 rounded-2xl bg-[#1877F2]/15 border-2 border-[#1877F2]/30 flex items-center justify-center mb-4 group-hover:bg-[#1877F2]/25 group-hover:border-[#1877F2]/50 transition-all duration-300">
-                                <i data-lucide="facebook" class="w-10 h-10 text-blue-400"></i>
+                        <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
+                            <div class="w-16 h-16 rounded-2xl bg-[#1877F2]/15 border-2 border-[#1877F2]/30 flex items-center justify-center mb-4 group-hover:bg-[#1877F2]/25 group-hover:border-[#1877F2]/50 transition-all duration-300">
+                                <svg class="w-8 h-8 icon-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                             </div>
-                            <h3 class="text-[20px] font-extrabold mb-1.5">فيسبوك</h3>
-                            <p class="text-[13px] text-slate-500 font-semibold mb-5">تابعنا على صفحتنا وتواصل معنا مباشرة</p>
-                            <div class="flex items-center gap-2 text-[12px] font-bold text-blue-400">
+                            <h3 class="text-[18px] font-extrabold mb-1">فيسبوك</h3>
+                            <p class="text-[13px] text-slate-500 font-semibold mb-4">Wade3 store</p>
+                            <div class="flex items-center gap-2 text-[12px] font-bold txt-fb">
                                 <span>زيارة الصفحة</span>
                                 <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
                             </div>
@@ -421,23 +473,84 @@
                     </div>
                 </a>
 
-                <!-- Instagram Card -->
+                <!-- Instagram -->
                 <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-card ig card rounded-2xl overflow-hidden group block">
                     <div class="relative">
-                        <!-- IG Cover Image -->
-                        <div class="h-44 overflow-hidden relative">
+                        <div class="h-40 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&q=80" alt="Instagram" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c16] via-[#0c0c16]/60 to-transparent"></div>
                         </div>
-                        <!-- IG Content -->
-                        <div class="social-icon-wrap px-7 pb-7 -mt-12 relative z-10">
-                            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#F77737]/15 via-[#E1306C]/15 to-[#833AB4]/15 border-2 border-[#E1306C]/30 flex items-center justify-center mb-4 group-hover:from-[#F77737]/25 group-hover:via-[#E1306C]/25 group-hover:to-[#833AB4]/25 group-hover:border-[#E1306C]/50 transition-all duration-300">
-                                <i data-lucide="instagram" class="w-10 h-10 text-pink-400"></i>
+                        <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#F77737]/15 via-[#E1306C]/15 to-[#833AB4]/15 border-2 border-[#E1306C]/30 flex items-center justify-center mb-4 group-hover:border-[#E1306C]/50 transition-all duration-300">
+                                <svg class="w-8 h-8 icon-ig" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                             </div>
-                            <h3 class="text-[20px] font-extrabold mb-1.5">انستاگرام</h3>
-                            <p class="text-[13px] text-slate-500 font-semibold mb-5">تابعنا وشاهد أحدث أعمالنا ومشاريعنا</p>
-                            <div class="flex items-center gap-2 text-[12px] font-bold text-pink-400">
-                                <span class="font-en" dir="ltr">@wade3_store</span>
+                            <h3 class="text-[18px] font-extrabold mb-1">انستاگرام</h3>
+                            <p class="text-[13px] text-slate-500 font-semibold mb-4">wade3 store</p>
+                            <div class="flex items-center gap-2 text-[12px] font-bold txt-ig">
+                                <span>زيارة الحساب</span>
+                                <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@wade3_store1" target="_blank" class="social-card tt card rounded-2xl overflow-hidden group block">
+                    <div class="relative">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80" alt="TikTok" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c16] via-[#0c0c16]/60 to-transparent"></div>
+                        </div>
+                        <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
+                            <div class="w-16 h-16 rounded-2xl bg-white/8 border-2 border-white/15 flex items-center justify-center mb-4 group-hover:bg-white/15 group-hover:border-white/30 transition-all duration-300">
+                                <svg class="w-8 h-8 icon-tt" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .56.04.82.11V9.02a6.37 6.37 0 0 0-.82-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.16 8.16 0 0 0 4.76 1.52V6.79a4.85 4.85 0 0 1-1-.1z"/></svg>
+                            </div>
+                            <h3 class="text-[18px] font-extrabold mb-1">تيك توك</h3>
+                            <p class="font-en text-[13px] text-slate-500 font-semibold mb-4" dir="ltr">@wade3_store1</p>
+                            <div class="flex items-center gap-2 text-[12px] font-bold txt-tt">
+                                <span>زيارة الحساب</span>
+                                <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Website -->
+                <a href="https://wade3-store.netlify.app/" target="_blank" class="social-card web card rounded-2xl overflow-hidden group block">
+                    <div class="relative">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Website" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c16] via-[#0c0c16]/60 to-transparent"></div>
+                        </div>
+                        <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
+                            <div class="w-16 h-16 rounded-2xl bg-indigo-500/15 border-2 border-indigo-500/30 flex items-center justify-center mb-4 group-hover:bg-indigo-500/25 group-hover:border-indigo-500/50 transition-all duration-300">
+                                <i data-lucide="globe" class="w-8 h-8 icon-web"></i>
+                            </div>
+                            <h3 class="text-[18px] font-extrabold mb-1">الموقع الإلكتروني</h3>
+                            <p class="font-en text-[13px] text-slate-500 font-semibold mb-4" dir="ltr">wade3-store.netlify.app</p>
+                            <div class="flex items-center gap-2 text-[12px] font-bold txt-web">
+                                <span>زيارة الموقع</span>
+                                <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@wade3store" target="_blank" class="social-card yt card rounded-2xl overflow-hidden group block">
+                    <div class="relative">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80" alt="YouTube" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c16] via-[#0c0c16]/60 to-transparent"></div>
+                        </div>
+                        <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
+                            <div class="w-16 h-16 rounded-2xl bg-red-500/15 border-2 border-red-500/30 flex items-center justify-center mb-4 group-hover:bg-red-500/25 group-hover:border-red-500/50 transition-all duration-300">
+                                <svg class="w-8 h-8 icon-yt" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            </div>
+                            <h3 class="text-[18px] font-extrabold mb-1">يوتيوب</h3>
+                            <p class="font-en text-[13px] text-slate-500 font-semibold mb-4" dir="ltr">@wade3store</p>
+                            <div class="flex items-center gap-2 text-[12px] font-bold txt-yt">
+                                <span>زيارة القناة</span>
                                 <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
                             </div>
                         </div>
@@ -459,11 +572,20 @@
                     <span class="text-[13px] font-bold text-slate-600">© 2025 <span class="font-en">Wade3 Store</span>. جميع الحقوق محفوظة.</span>
                 </div>
                 <div class="flex items-center gap-3">
-                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover:text-blue-400 hover:border-blue-500/25">
-                        <i data-lucide="facebook" class="w-[18px] h-[18px]"></i>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-fb">
+                        <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     </a>
-                    <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover:text-pink-400 hover:border-pink-500/25">
-                        <i data-lucide="instagram" class="w-[18px] h-[18px]"></i>
+                    <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-ig">
+                        <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@wade3_store1" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-tt">
+                        <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .56.04.82.11V9.02a6.37 6.37 0 0 0-.82-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.16 8.16 0 0 0 4.76 1.52V6.79a4.85 4.85 0 0 1-1-.1z"/></svg>
+                    </a>
+                    <a href="https://wade3-store.netlify.app/" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-web">
+                        <i data-lucide="globe" class="w-[18px] h-[18px]"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@wade3store" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-yt">
+                        <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                     </a>
                 </div>
             </div>
