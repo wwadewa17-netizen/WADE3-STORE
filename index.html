@@ -43,7 +43,6 @@
         .hide-bottom::after{content:'';position:absolute;bottom:0;left:0;right:0;height:36px;background:#06060b;z-index:3}
 
         .nav-bar{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(6,6,11,.75);border-bottom:1px solid rgba(255,255,255,.04)}
-        .price-tag{background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(124,58,237,.1));border:1px solid rgba(99,102,241,.2)}
 
         .section-glow-r{position:absolute;width:400px;height:400px;background:rgba(99,102,241,.06);border-radius:50%;filter:blur(120px);pointer-events:none}
         .section-glow-l{position:absolute;width:300px;height:300px;background:rgba(124,58,237,.05);border-radius:50%;filter:blur(100px);pointer-events:none}
@@ -72,9 +71,6 @@
         .social-card.web::before{background:linear-gradient(135deg,#6366F1,#7C3AED)}
         .social-card.yt::before{background:linear-gradient(135deg,#FF0000,#CC0000)}
         .social-card .sc-wrap{position:relative;z-index:2}
-
-        .order-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:12px;font-size:12px;font-weight:700;transition:all .25s ease}
-        .order-link:hover{transform:translateX(-3px)}
 
         .note-banner{background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(124,58,237,.06));border:1px solid rgba(99,102,241,.12)}
 
@@ -106,6 +102,9 @@
         .hover-tt:hover{color:#fff;border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.06)}
         .hover-web:hover{color:#818cf8;border-color:rgba(129,140,248,.2);background:rgba(129,140,248,.06)}
         .hover-yt:hover{color:#f87171;border-color:rgba(248,113,113,.2);background:rgba(248,113,113,.06)}
+
+        .ask-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:12px;font-size:12px;font-weight:700;transition:all .25s ease;border:1.5px solid rgba(99,102,241,.2);background:rgba(99,102,241,.06);color:#a5b4fc}
+        .ask-btn:hover{border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.12);color:#c7d2fe;transform:translateX(-3px)}
     </style>
 </head>
 <body class="grid-bg">
@@ -212,7 +211,7 @@
                 <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-[900] tracking-tight mb-4">
                     ماذا <span class="text-gradient">نقدّم لك</span>
                 </h2>
-                <p class="text-[15px] font-semibold text-slate-500 max-w-lg mx-auto leading-relaxed">اختر الخدمة التي تناسبك — جودة عالية بأسعار مناسبة</p>
+                <p class="text-[15px] font-semibold text-slate-500 max-w-lg mx-auto leading-relaxed">اختر الخدمة التي تناسبك وتواصل معنا لمعرفة السعر</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -223,14 +222,10 @@
                     </div>
                     <h3 class="text-[18px] font-extrabold mb-2">موقع إلكتروني بسيط</h3>
                     <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">تصميم موقع أنيق وبسيط وسريع التنفيذ</p>
-                    <div class="flex items-center justify-between">
-                        <div class="price-tag px-4 py-2 rounded-xl">
-                            <span class="font-en text-[22px] font-extrabold text-indigo-300">50 ₪</span>
-                        </div>
-                        <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-indigo-400 hover:text-indigo-300 bg-indigo-500/8 border border-indigo-500/15 rounded-xl">
-                            اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn">
+                        <i data-lucide="message-square" class="w-4 h-4"></i>
+                        اسأل عن السعر
+                    </a>
                 </div>
 
                 <!-- S2 -->
@@ -240,14 +235,10 @@
                     </div>
                     <h3 class="text-[18px] font-extrabold mb-2">موقع إلكتروني احترافي أونلاين</h3>
                     <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">موقع متكامل مع جميع المميزات الاحترافية</p>
-                    <div class="flex items-center justify-between">
-                        <div class="price-tag px-4 py-2 rounded-xl">
-                            <span class="font-en text-[22px] font-extrabold text-violet-300">150 ₪</span>
-                        </div>
-                        <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-violet-400 hover:text-violet-300 bg-violet-500/8 border border-violet-500/15 rounded-xl">
-                            اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn">
+                        <i data-lucide="message-square" class="w-4 h-4"></i>
+                        اسأل عن السعر
+                    </a>
                 </div>
 
                 <!-- S3 -->
@@ -257,14 +248,10 @@
                     </div>
                     <h3 class="text-[18px] font-extrabold mb-2">موقع إلكتروني في متجر قوقل</h3>
                     <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">تطوير ونشر تطبيقك على متجر Google Play</p>
-                    <div class="flex items-center justify-between">
-                        <div class="price-tag px-4 py-2 rounded-xl">
-                            <span class="font-en text-[22px] font-extrabold text-emerald-300">350 ₪</span>
-                        </div>
-                        <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-emerald-400 hover:text-emerald-300 bg-emerald-500/8 border border-emerald-500/15 rounded-xl">
-                            اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn">
+                        <i data-lucide="message-square" class="w-4 h-4"></i>
+                        اسأل عن السعر
+                    </a>
                 </div>
 
                 <!-- S4 -->
@@ -274,14 +261,10 @@
                     </div>
                     <h3 class="text-[18px] font-extrabold mb-2">أغنية كاملة — دقيقة واحدة</h3>
                     <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">غناء متكامل مع موسيقى وكلمات وكل شيء بجودة عالية</p>
-                    <div class="flex items-center justify-between">
-                        <div class="price-tag px-4 py-2 rounded-xl">
-                            <span class="font-en text-[22px] font-extrabold text-pink-300">40 ₪</span>
-                        </div>
-                        <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-pink-400 hover:text-pink-300 bg-pink-500/8 border border-pink-500/15 rounded-xl">
-                            اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn">
+                        <i data-lucide="message-square" class="w-4 h-4"></i>
+                        اسأل عن السعر
+                    </a>
                 </div>
 
                 <!-- S5 -->
@@ -291,14 +274,10 @@
                     </div>
                     <h3 class="text-[18px] font-extrabold mb-2">أغنية مع فيديو كليب</h3>
                     <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">أغنية كاملة مع فيديو كليب وكلمات والمدة من اختيارك</p>
-                    <div class="flex items-center justify-between">
-                        <div class="price-tag px-4 py-2 rounded-xl">
-                            <span class="font-en text-[22px] font-extrabold text-rose-300">90 ₪</span>
-                        </div>
-                        <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="order-link text-rose-400 hover:text-rose-300 bg-rose-500/8 border border-rose-500/15 rounded-xl">
-                            اطلب <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn">
+                        <i data-lucide="message-square" class="w-4 h-4"></i>
+                        اسأل عن السعر
+                    </a>
                 </div>
 
                 <!-- Note Card -->
@@ -336,7 +315,7 @@
                     <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center flex-shrink-0">
                         <i data-lucide="info" class="w-5 h-5 text-indigo-400"></i>
                     </div>
-                    <span class="text-[14px] font-bold text-slate-300">الطلب عن طريق منصات التواصل التالية</span>
+                    <span class="text-[14px] font-bold text-slate-300">للتواصل والاستفسار عن الأسعار عبر المنصات التالية</span>
                 </div>
                 <div class="flex items-center gap-2.5 flex-wrap justify-center">
                     <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-btn text-[11px] font-bold txt-fb px-4 py-2.5 rounded-xl bg-fb border bg-fb-hover inline-flex items-center gap-1.5">
@@ -447,11 +426,10 @@
                 <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-[900] tracking-tight mb-4">
                     تابعنا على <span class="text-gradient">منصاتنا</span>
                 </h2>
-                <p class="text-[15px] font-semibold text-slate-500 max-w-lg mx-auto leading-relaxed">تواصل معنا عبر أي منصة واطلب خدمتك مباشرة</p>
+                <p class="text-[15px] font-semibold text-slate-500 max-w-lg mx-auto leading-relaxed">تواصل معنا عبر أي منصة واسأل عن السعر مباشرة</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
                 <!-- Facebook -->
                 <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-card fb card rounded-2xl overflow-hidden group block">
                     <div class="relative">
@@ -466,7 +444,7 @@
                             <h3 class="text-[18px] font-extrabold mb-1">فيسبوك</h3>
                             <p class="text-[13px] text-slate-500 font-semibold mb-4">Wade3 store</p>
                             <div class="flex items-center gap-2 text-[12px] font-bold txt-fb">
-                                <span>زيارة الصفحة</span>
+                                <span>تواصل عبر الخاص</span>
                                 <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
                             </div>
                         </div>
@@ -487,7 +465,7 @@
                             <h3 class="text-[18px] font-extrabold mb-1">انستاگرام</h3>
                             <p class="text-[13px] text-slate-500 font-semibold mb-4">wade3 store</p>
                             <div class="flex items-center gap-2 text-[12px] font-bold txt-ig">
-                                <span>زيارة الحساب</span>
+                                <span>تواصل عبر الخاص</span>
                                 <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
                             </div>
                         </div>
@@ -508,7 +486,7 @@
                             <h3 class="text-[18px] font-extrabold mb-1">تيك توك</h3>
                             <p class="font-en text-[13px] text-slate-500 font-semibold mb-4" dir="ltr">@wade3_store1</p>
                             <div class="flex items-center gap-2 text-[12px] font-bold txt-tt">
-                                <span>زيارة الحساب</span>
+                                <span>تواصل عبر الخاص</span>
                                 <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
                             </div>
                         </div>
@@ -550,7 +528,7 @@
                             <h3 class="text-[18px] font-extrabold mb-1">يوتيوب</h3>
                             <p class="font-en text-[13px] text-slate-500 font-semibold mb-4" dir="ltr">@wade3store</p>
                             <div class="flex items-center gap-2 text-[12px] font-bold txt-yt">
-                                <span>زيارة القناة</span>
+                                <span>تواصل عبر الخاص</span>
                                 <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
                             </div>
                         </div>
