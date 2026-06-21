@@ -39,7 +39,6 @@
         .portfolio-wrap img{transition:transform .6s cubic-bezier(.4,0,.2,1)}
         .portfolio-wrap:hover img{transform:scale(1.08)}
         .portfolio-wrap .grad-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,11,1) 0%,rgba(6,6,11,.4) 40%,transparent 70%);pointer-events:none}
-
         .hide-bottom::after{content:'';position:absolute;bottom:0;left:0;right:0;height:36px;background:#06060b;z-index:3}
 
         .nav-bar{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(6,6,11,.75);border-bottom:1px solid rgba(255,255,255,.04)}
@@ -59,12 +58,11 @@
         .social-btn{transition:all .3s cubic-bezier(.4,0,.2,1)}
         .social-btn:hover{transform:translateY(-3px)}
 
-        input,select,textarea{font-family:'Cairo',sans-serif;font-weight:600}
         .divider-line{height:1px;background:linear-gradient(to left,transparent,rgba(99,102,241,.2),transparent)}
 
         .social-card{position:relative;overflow:hidden;border-radius:1.25rem}
-        .social-card::before{content:'';position:absolute;inset:0;opacity:.12;transition:opacity .4s ease}
-        .social-card:hover::before{opacity:.22}
+        .social-card::before{content:'';position:absolute;inset:0;opacity:.1;transition:opacity .4s ease}
+        .social-card:hover::before{opacity:.18}
         .social-card.fb::before{background:linear-gradient(135deg,#1877F2,#0A5DC2)}
         .social-card.ig::before{background:linear-gradient(135deg,#E1306C,#833AB4,#F77737,#FCAF45)}
         .social-card.tt::before{background:linear-gradient(135deg,#010101,#25F4EE,#FE2C55)}
@@ -74,29 +72,15 @@
 
         .note-banner{background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(124,58,237,.06));border:1px solid rgba(99,102,241,.12)}
 
-        .icon-fb{color:#1877F2}
-        .icon-ig{color:#E4405F}
-        .icon-tt{color:#fff}
-        .icon-web{color:#818CF8}
-        .icon-yt{color:#FF0000}
+        .icon-fb{color:#1877F2}.icon-ig{color:#E4405F}.icon-tt{color:#fff}.icon-web{color:#818CF8}.icon-yt{color:#FF0000}
 
-        .bg-fb{background:rgba(24,119,242,.1);border-color:rgba(24,119,242,.2)}
-        .bg-fb-hover:hover{background:rgba(24,119,242,.2);border-color:rgba(24,119,242,.35)}
-        .bg-ig{background:rgba(228,64,95,.1);border-color:rgba(228,64,95,.2)}
-        .bg-ig-hover:hover{background:rgba(228,64,95,.2);border-color:rgba(228,64,95,.35)}
-        .bg-tt{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
-        .bg-tt-hover:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2)}
-        .bg-web{background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.2)}
-        .bg-web-hover:hover{background:rgba(99,102,241,.2);border-color:rgba(99,102,241,.35)}
-        .bg-yt{background:rgba(255,0,0,.08);border-color:rgba(255,0,0,.15)}
-        .bg-yt-hover:hover{background:rgba(255,0,0,.16);border-color:rgba(255,0,0,.3)}
+        .bg-fb{background:rgba(24,119,242,.1);border-color:rgba(24,119,242,.2)}.bg-fb-hover:hover{background:rgba(24,119,242,.2);border-color:rgba(24,119,242,.35)}
+        .bg-ig{background:rgba(228,64,95,.1);border-color:rgba(228,64,95,.2)}.bg-ig-hover:hover{background:rgba(228,64,95,.2);border-color:rgba(228,64,95,.35)}
+        .bg-tt{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}.bg-tt-hover:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2)}
+        .bg-web{background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.2)}.bg-web-hover:hover{background:rgba(99,102,241,.2);border-color:rgba(99,102,241,.35)}
+        .bg-yt{background:rgba(255,0,0,.08);border-color:rgba(255,0,0,.15)}.bg-yt-hover:hover{background:rgba(255,0,0,.16);border-color:rgba(255,0,0,.3)}
 
-        .txt-fb{color:#60a5fa}
-        .txt-ig{color:#f472b6}
-        .txt-tt{color:#e2e8f0}
-        .txt-web{color:#818cf8}
-        .txt-yt{color:#f87171}
-
+        .txt-fb{color:#60a5fa}.txt-ig{color:#f472b6}.txt-tt{color:#e2e8f0}.txt-web{color:#818cf8}.txt-yt{color:#f87171}
         .hover-fb:hover{color:#60a5fa;border-color:rgba(96,165,250,.2);background:rgba(96,165,250,.06)}
         .hover-ig:hover{color:#f472b6;border-color:rgba(244,114,182,.2);background:rgba(244,114,182,.06)}
         .hover-tt:hover{color:#fff;border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.06)}
@@ -105,6 +89,94 @@
 
         .ask-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:12px;font-size:12px;font-weight:700;transition:all .25s ease;border:1.5px solid rgba(99,102,241,.2);background:rgba(99,102,241,.06);color:#a5b4fc}
         .ask-btn:hover{border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.12);color:#c7d2fe;transform:translateX(-3px)}
+
+        /* ===== Platform Cover Mockups ===== */
+        .sc-cover{height:180px;overflow:hidden;position:relative}
+        .sc-cover .sc-fade{position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to top,#0c0c16,transparent);z-index:2}
+        .social-card:hover .sc-cover{transform:scale(1.02);transition:transform .5s ease}
+
+        /* Facebook UI */
+        .fb-ui{background:#1877F2;height:100%;position:relative}
+        .fb-ui .fb-bar{height:44px;background:#1877F2;display:flex;align-items:center;padding:0 12px;gap:8px;border-bottom:1px solid rgba(255,255,255,.1)}
+        .fb-ui .fb-search{flex:1;height:28px;background:rgba(255,255,255,.12);border-radius:6px}
+        .fb-ui .fb-dots{display:flex;gap:4px}
+        .fb-ui .fb-dots span{width:20px;height:20px;background:rgba(255,255,255,.15);border-radius:50%}
+        .fb-ui .fb-body{padding:10px 12px;background:#242526;display:flex;gap:10px;height:calc(100% - 44px)}
+        .fb-ui .fb-avatar{width:36px;height:36px;background:rgba(255,255,255,.1);border-radius:50%;flex-shrink:0}
+        .fb-ui .fb-lines{flex:1;display:flex;flex-direction:column;gap:6px}
+        .fb-ui .fb-lines span{display:block;background:rgba(255,255,255,.08);border-radius:4px}
+        .fb-ui .fb-lines .l1{width:60%;height:8px}
+        .fb-ui .fb-lines .l2{width:90%;height:6px}
+        .fb-ui .fb-lines .l3{width:75%;height:6px}
+        .fb-ui .fb-post{margin-top:8px;background:rgba(255,255,255,.05);border-radius:8px;height:60px}
+
+        /* Instagram UI */
+        .ig-ui{background:#1a1a2e;height:100%;position:relative;overflow:hidden}
+        .ig-ui .ig-bar{height:44px;background:rgba(26,26,46,.95);display:flex;align-items:center;justify-content:space-between;padding:0 12px;border-bottom:1px solid rgba(255,255,255,.08)}
+        .ig-ui .ig-cam{width:22px;height:22px;border:2px solid rgba(255,255,255,.2);border-radius:6px}
+        .ig-ui .ig-logo{width:80px;height:16px;background:linear-gradient(90deg,#FCAF45,#F77737,#E1306C,#833AB4);border-radius:4px;opacity:.6}
+        .ig-ui .ig-msg{width:22px;height:18px;background:rgba(255,255,255,.12);border-radius:4px}
+        .ig-ui .ig-stories{display:flex;gap:8px;padding:10px 12px}
+        .ig-ui .ig-story{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.06);border:2px solid transparent;flex-shrink:0}
+        .ig-ui .ig-story.s1{border-color:linear-gradient(45deg,#FCAF45,#E1306C);background:conic-gradient(from 0deg,#FCAF45,#E1306C,#833AB4,#FCAF45);padding:2px}
+        .ig-ui .ig-story.s1>div{width:100%;height:100%;border-radius:50%;background:#1a1a2e}
+        .ig-ui .ig-story.s2{border-color:linear-gradient(45deg,#833AB4,#25F4EE);background:conic-gradient(from 90deg,#833AB4,#25F4EE,#FCAF45,#833AB4);padding:2px}
+        .ig-ui .ig-story.s2>div{width:100%;height:100%;border-radius:50%;background:#1a1a2e}
+        .ig-ui .ig-story.s3{border-color:linear-gradient(45deg,#F77737,#FCAF45);background:conic-gradient(from 180deg,#F77737,#E1306C,#25F4EE,#F77737);padding:2px}
+        .ig-ui .ig-story.s3>div{width:100%;height:100%;border-radius:50%;background:#1a1a2e}
+        .ig-ui .ig-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;padding:6px 12px}
+        .ig-ui .ig-grid div{background:rgba(255,255,255,.04);border-radius:2px;aspect-ratio:1}
+
+        /* TikTok UI */
+        .tt-ui{background:#0a0a0a;height:100%;position:relative}
+        .tt-ui .tt-top{height:44px;display:flex;align-items:center;justify-content:center;gap:20px;border-bottom:1px solid rgba(255,255,255,.06)}
+        .tt-ui .tt-tab{font-size:10px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:1px}
+        .tt-ui .tt-tab.active{color:#fff}
+        .tt-ui .tt-video{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:120px;height:200px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(255,255,255,.06)}
+        .tt-ui .tt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center}
+        .tt-ui .tt-play::after{content:'';width:0;height:0;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent rgba(255,255,255,.4)}
+        .tt-ui .tt-side{position:absolute;right:12px;top:80px;display:flex;flex-direction:column;align-items:center;gap:16px}
+        .tt-ui .tt-side-icon{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.06)}
+        .tt-ui .tt-side-icon.tt-heart{background:rgba(254,44,85,.12)}
+        .tt-ui .tt-bottom{position:absolute;bottom:0;left:0;right:0;height:36px;display:flex;align-items:center;justify-content:space-around;background:rgba(0,0,0,.8);border-top:1px solid rgba(255,255,255,.06)}
+        .tt-ui .tt-nav-icon{width:20px;height:20px;background:rgba(255,255,255,.1);border-radius:3px}
+        .tt-ui .tt-nav-icon.tt-plus{width:32px;height:20px;background:rgba(255,255,255,.08);border-radius:4px;position:relative}
+        .tt-ui .tt-nav-icon.tt-plus::after{content:'+';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,255,255,.3);font-weight:700}
+
+        /* YouTube UI */
+        .yt-ui{background:#0f0f0f;height:100%;position:relative}
+        .yt-ui .yt-bar{height:44px;background:#0f0f0f;display:flex;align-items:center;padding:0 12px;gap:10px;border-bottom:1px solid rgba(255,255,255,.06)}
+        .yt-ui .yt-burger{width:20px;height:14px;display:flex;flex-direction:column;gap:3px}
+        .yt-ui .yt-burger span{height:2px;background:rgba(255,255,255,.3);border-radius:1px}
+        .yt-ui .yt-logo{width:70px;height:14px;background:rgba(255,0,0,.3);border-radius:3px}
+        .yt-ui .yt-search{flex:1;height:28px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:14px;margin-left:auto}
+        .yt-ui .yt-body{padding:8px 12px;display:flex;flex-direction:column;gap:6px}
+        .yt-ui .yt-thumb{width:100%;height:80px;background:rgba(255,255,255,.04);border-radius:6px;position:relative;overflow:hidden}
+        .yt-ui .yt-thumb::after{content:'';position:absolute;bottom:4px;right:4px;width:28px;height:14px;background:rgba(0,0,0,.7);border-radius:2px}
+        .yt-ui .yt-thumb-bar{position:absolute;bottom:6px;right:7px;width:18px;height:3px;background:rgba(255,0,0,.5);border-radius:1px}
+        .yt-ui .yt-info{display:flex;gap:8px}
+        .yt-ui .yt-ch-avatar{width:28px;height:28px;background:rgba(255,255,255,.08);border-radius:50%;flex-shrink:0}
+        .yt-ui .yt-ch-lines{flex:1;display:flex;flex-direction:column;gap:4px}
+        .yt-ui .yt-ch-lines span{display:block;background:rgba(255,255,255,.06);border-radius:3px}
+        .yt-ui .yt-ch-lines .yl1{width:70%;height:6px}
+        .yt-ui .yt-ch-lines .yl2{width:50%;height:5px}
+
+        /* Website UI */
+        .web-ui{background:#1a1a2a;height:100%;position:relative}
+        .web-ui .web-chrome{height:36px;background:#2a2a3a;display:flex;align-items:center;padding:0 10px;gap:8px;border-bottom:1px solid rgba(255,255,255,.06);border-radius:10px 10px 0 0;margin:6px 6px 0}
+        .web-ui .web-dots{display:flex;gap:5px}
+        .web-ui .web-dots span{width:10px;height:10px;border-radius:50%}
+        .web-ui .web-dots .rd{background:#ff5f57}.web-ui .web-dots .yl{background:#febc2e}.web-ui .web-dots .gn{background:#28c840}
+        .web-ui .web-url{flex:1;height:22px;background:rgba(255,255,255,.06);border-radius:6px;border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;padding:0 8px}
+        .web-ui .web-url-lock{width:8px;height:8px;background:rgba(99,102,241,.4);border-radius:2px;margin-left:6px}
+        .web-ui .web-url-text{width:60%;height:5px;background:rgba(255,255,255,.1);border-radius:2px}
+        .web-ui .web-content{padding:10px 14px;display:flex;flex-direction:column;gap:8px}
+        .web-ui .web-hero{height:40px;background:linear-gradient(135deg,rgba(99,102,241,.12),rgba(124,58,237,.08));border-radius:6px}
+        .web-ui .web-cards{display:flex;gap:6px}
+        .web-ui .web-card-item{flex:1;height:50px;background:rgba(255,255,255,.03);border-radius:4px;border:1px solid rgba(255,255,255,.04)}
+        .web-ui .web-lines{display:flex;flex-direction:column;gap:4px}
+        .web-ui .web-lines span{display:block;background:rgba(255,255,255,.05);border-radius:3px}
+        .web-ui .web-lines .wl1{width:40%;height:6px;background:rgba(99,102,241,.15)}.web-ui .web-lines .wl2{width:70%;height:4px}.web-ui .web-lines .wl3{width:55%;height:4px}
     </style>
 </head>
 <body class="grid-bg">
@@ -149,49 +221,24 @@
         <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent"></div>
         <div class="section-glow-r" style="top:-100px;right:-100px"></div>
         <div class="section-glow-l" style="bottom:0;left:-50px"></div>
-
         <div class="relative z-10 max-w-3xl mx-auto">
             <div class="anim-up d1 inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-indigo-500/15 bg-indigo-500/5 mb-8">
-                <span class="relative flex h-2.5 w-2.5">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-500"></span>
-                </span>
+                <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-500"></span></span>
                 <span class="text-[11px] font-bold text-indigo-300 uppercase tracking-[.2em]">متاح الآن</span>
             </div>
-
             <h1 class="anim-up d2 text-[clamp(2.5rem,7vw,4.5rem)] font-[900] leading-[1.05] tracking-tight mb-7">
                 <span class="text-white">مرحباً بك في</span><br>
                 <span class="font-en text-gradient">Wade3 Store</span>
             </h1>
-
-            <p class="anim-up d3 text-[17px] font-semibold leading-[1.8] text-slate-400 max-w-xl mx-auto mb-10">
-                خدمات تصميم المواقع الإلكترونية، تطبيقات متجر قوقل، الغناء والإنتاج الموسيقي — بجودة احترافية وأسعار مناسبة
-            </p>
-
+            <p class="anim-up d3 text-[17px] font-semibold leading-[1.8] text-slate-400 max-w-xl mx-auto mb-10">خدمات تصميم المواقع، تطبيقات متجر قوقل، الغناء والإنتاج الموسيقي — بجودة احترافية وأسعار مناسبة</p>
             <div class="anim-up d4 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#services" class="btn-main text-[14px] font-bold text-white px-9 py-4 rounded-2xl inline-flex items-center gap-2.5">
-                    <i data-lucide="layers" class="w-5 h-5"></i>
-                    تصفّح الخدمات
-                </a>
-                <a href="#contact" class="btn-outline text-[14px] font-bold text-indigo-300 px-9 py-4 rounded-2xl inline-flex items-center gap-2.5">
-                    <i data-lucide="send" class="w-5 h-5"></i>
-                    تواصل معنا
-                </a>
+                <a href="#services" class="btn-main text-[14px] font-bold text-white px-9 py-4 rounded-2xl inline-flex items-center gap-2.5"><i data-lucide="layers" class="w-5 h-5"></i> تصفّح الخدمات</a>
+                <a href="#contact" class="btn-outline text-[14px] font-bold text-indigo-300 px-9 py-4 rounded-2xl inline-flex items-center gap-2.5"><i data-lucide="send" class="w-5 h-5"></i> تواصل معنا</a>
             </div>
-
             <div class="anim-up d5 mt-16 grid grid-cols-3 gap-6 max-w-md mx-auto">
-                <div class="text-center">
-                    <div class="font-en text-[28px] font-extrabold text-gradient">5+</div>
-                    <div class="text-[11px] text-slate-500 mt-1 font-bold">خدمات</div>
-                </div>
-                <div class="text-center border-x border-white/5 px-4">
-                    <div class="font-en text-[28px] font-extrabold text-gradient">Fast</div>
-                    <div class="text-[11px] text-slate-500 mt-1 font-bold">تنفيذ سريع</div>
-                </div>
-                <div class="text-center">
-                    <div class="font-en text-[28px] font-extrabold text-gradient">24/7</div>
-                    <div class="text-[11px] text-slate-500 mt-1 font-bold">دعم فني</div>
-                </div>
+                <div class="text-center"><div class="font-en text-[28px] font-extrabold text-gradient">5+</div><div class="text-[11px] text-slate-500 mt-1 font-bold">خدمات</div></div>
+                <div class="text-center border-x border-white/5 px-4"><div class="font-en text-[28px] font-extrabold text-gradient">Fast</div><div class="text-[11px] text-slate-500 mt-1 font-bold">تنفيذ سريع</div></div>
+                <div class="text-center"><div class="font-en text-[28px] font-extrabold text-gradient">24/7</div><div class="text-[11px] text-slate-500 mt-1 font-bold">دعم فني</div></div>
             </div>
         </div>
     </section>
@@ -201,143 +248,61 @@
     <!-- SERVICES -->
     <section id="services" class="relative py-28 px-5 overflow-hidden">
         <div class="section-glow-r" style="top:50%;left:-150px;transform:translateY(-50%)"></div>
-
         <div class="relative z-10 max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/8 bg-white/[.03] mb-5">
-                    <i data-lucide="sparkles" class="w-4 h-4 text-indigo-400"></i>
-                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-[.2em]">خدماتنا</span>
-                </div>
-                <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-[900] tracking-tight mb-4">
-                    ماذا <span class="text-gradient">نقدّم لك</span>
-                </h2>
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/8 bg-white/[.03] mb-5"><i data-lucide="sparkles" class="w-4 h-4 text-indigo-400"></i><span class="text-[11px] font-bold text-slate-400 uppercase tracking-[.2em]">خدماتنا</span></div>
+                <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-[900] tracking-tight mb-4">ماذا <span class="text-gradient">نقدّم لك</span></h2>
                 <p class="text-[15px] font-semibold text-slate-500 max-w-lg mx-auto leading-relaxed">اختر الخدمة التي تناسبك وتواصل معنا لمعرفة السعر</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                <!-- S1 -->
                 <div class="card rounded-2xl p-7 group observe-card">
-                    <div class="icon-box w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/15 flex items-center justify-center mb-6">
-                        <i data-lucide="globe" class="w-7 h-7 text-indigo-400"></i>
-                    </div>
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/15 flex items-center justify-center mb-6"><i data-lucide="globe" class="w-7 h-7 text-indigo-400"></i></div>
                     <h3 class="text-[18px] font-extrabold mb-2">موقع إلكتروني بسيط</h3>
                     <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">تصميم موقع أنيق وبسيط وسريع التنفيذ</p>
-                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn">
-                        <i data-lucide="message-square" class="w-4 h-4"></i>
-                        اسأل عن السعر
-                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn"><i data-lucide="message-square" class="w-4 h-4"></i> اسأل عن السعر</a>
                 </div>
-
-                <!-- S2 -->
                 <div class="card rounded-2xl p-7 group observe-card">
-                    <div class="icon-box w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/15 flex items-center justify-center mb-6">
-                        <i data-lucide="monitor" class="w-7 h-7 text-violet-400"></i>
-                    </div>
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/15 flex items-center justify-center mb-6"><i data-lucide="monitor" class="w-7 h-7 text-violet-400"></i></div>
                     <h3 class="text-[18px] font-extrabold mb-2">موقع إلكتروني احترافي أونلاين</h3>
                     <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">موقع متكامل مع جميع المميزات الاحترافية</p>
-                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn">
-                        <i data-lucide="message-square" class="w-4 h-4"></i>
-                        اسأل عن السعر
-                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn"><i data-lucide="message-square" class="w-4 h-4"></i> اسأل عن السعر</a>
                 </div>
-
-                <!-- S3 -->
                 <div class="card rounded-2xl p-7 group observe-card">
-                    <div class="icon-box w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/15 flex items-center justify-center mb-6">
-                        <i data-lucide="smartphone" class="w-7 h-7 text-emerald-400"></i>
-                    </div>
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/15 flex items-center justify-center mb-6"><i data-lucide="smartphone" class="w-7 h-7 text-emerald-400"></i></div>
                     <h3 class="text-[18px] font-extrabold mb-2">موقع إلكتروني في متجر قوقل</h3>
                     <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">تطوير ونشر تطبيقك على متجر Google Play</p>
-                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn">
-                        <i data-lucide="message-square" class="w-4 h-4"></i>
-                        اسأل عن السعر
-                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn"><i data-lucide="message-square" class="w-4 h-4"></i> اسأل عن السعر</a>
                 </div>
-
-                <!-- S4 -->
                 <div class="card rounded-2xl p-7 group observe-card">
-                    <div class="icon-box w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/15 flex items-center justify-center mb-6">
-                        <i data-lucide="mic" class="w-7 h-7 text-pink-400"></i>
-                    </div>
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/15 flex items-center justify-center mb-6"><i data-lucide="mic" class="w-7 h-7 text-pink-400"></i></div>
                     <h3 class="text-[18px] font-extrabold mb-2">أغنية كاملة — دقيقة واحدة</h3>
                     <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">غناء متكامل مع موسيقى وكلمات وكل شيء بجودة عالية</p>
-                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn">
-                        <i data-lucide="message-square" class="w-4 h-4"></i>
-                        اسأل عن السعر
-                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn"><i data-lucide="message-square" class="w-4 h-4"></i> اسأل عن السعر</a>
                 </div>
-
-                <!-- S5 -->
                 <div class="card rounded-2xl p-7 group observe-card">
-                    <div class="icon-box w-14 h-14 rounded-2xl bg-rose-500/10 border border-rose-500/15 flex items-center justify-center mb-6">
-                        <i data-lucide="video" class="w-7 h-7 text-rose-400"></i>
-                    </div>
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-rose-500/10 border border-rose-500/15 flex items-center justify-center mb-6"><i data-lucide="video" class="w-7 h-7 text-rose-400"></i></div>
                     <h3 class="text-[18px] font-extrabold mb-2">أغنية مع فيديو كليب</h3>
                     <p class="text-[13px] font-semibold text-slate-500 leading-relaxed mb-6">أغنية كاملة مع فيديو كليب وكلمات والمدة من اختيارك</p>
-                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn">
-                        <i data-lucide="message-square" class="w-4 h-4"></i>
-                        اسأل عن السعر
-                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="ask-btn"><i data-lucide="message-square" class="w-4 h-4"></i> اسأل عن السعر</a>
                 </div>
-
-                <!-- Note Card -->
                 <div class="card rounded-2xl p-7 group observe-card flex flex-col justify-center">
-                    <div class="icon-box w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/15 flex items-center justify-center mb-6">
-                        <i data-lucide="shield-check" class="w-7 h-7 text-indigo-400"></i>
-                    </div>
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/15 flex items-center justify-center mb-6"><i data-lucide="shield-check" class="w-7 h-7 text-indigo-400"></i></div>
                     <h3 class="text-[18px] font-extrabold mb-3">ضمان الجودة</h3>
                     <div class="space-y-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-5 h-5 rounded-full bg-emerald-500/15 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-400"></i>
-                            </div>
-                            <span class="text-[13px] font-semibold text-slate-400">دعم فني 24 ساعة لجميع المنتجات</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-5 h-5 rounded-full bg-emerald-500/15 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-400"></i>
-                            </div>
-                            <span class="text-[13px] font-semibold text-slate-400">التسليم من يوم إلى 3 أيام</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-5 h-5 rounded-full bg-emerald-500/15 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="check" class="w-3 h-3 text-emerald-400"></i>
-                            </div>
-                            <span class="text-[13px] font-semibold text-slate-400">جودة عالية بأسعار تنافسية</span>
-                        </div>
+                        <div class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-emerald-500/15 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-3 h-3 text-emerald-400"></i></div><span class="text-[13px] font-semibold text-slate-400">دعم فني 24 ساعة لجميع المنتجات</span></div>
+                        <div class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-emerald-500/15 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-3 h-3 text-emerald-400"></i></div><span class="text-[13px] font-semibold text-slate-400">التسليم من يوم إلى 3 أيام</span></div>
+                        <div class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-emerald-500/15 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-3 h-3 text-emerald-400"></i></div><span class="text-[13px] font-semibold text-slate-400">جودة عالية بأسعار تنافسية</span></div>
                     </div>
                 </div>
             </div>
-
-            <!-- Info Banner -->
             <div class="mt-8 note-banner rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-center gap-5">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center flex-shrink-0">
-                        <i data-lucide="info" class="w-5 h-5 text-indigo-400"></i>
-                    </div>
-                    <span class="text-[14px] font-bold text-slate-300">للتواصل والاستفسار عن الأسعار عبر المنصات التالية</span>
-                </div>
+                <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="info" class="w-5 h-5 text-indigo-400"></i></div><span class="text-[14px] font-bold text-slate-300">للتواصل والاستفسار عن الأسعار عبر المنصات التالية</span></div>
                 <div class="flex items-center gap-2.5 flex-wrap justify-center">
-                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-btn text-[11px] font-bold txt-fb px-4 py-2.5 rounded-xl bg-fb border bg-fb-hover inline-flex items-center gap-1.5">
-                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        فيسبوك
-                    </a>
-                    <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-btn text-[11px] font-bold txt-ig px-4 py-2.5 rounded-xl bg-ig border bg-ig-hover inline-flex items-center gap-1.5">
-                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                        انستا
-                    </a>
-                    <a href="https://www.tiktok.com/@wade3_store1" target="_blank" class="social-btn text-[11px] font-bold txt-tt px-4 py-2.5 rounded-xl bg-tt border bg-tt-hover inline-flex items-center gap-1.5">
-                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .56.04.82.11V9.02a6.37 6.37 0 0 0-.82-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.16 8.16 0 0 0 4.76 1.52V6.79a4.85 4.85 0 0 1-1-.1z"/></svg>
-                        تيك توك
-                    </a>
-                    <a href="https://wade3-store.netlify.app/" target="_blank" class="social-btn text-[11px] font-bold txt-web px-4 py-2.5 rounded-xl bg-web border bg-web-hover inline-flex items-center gap-1.5">
-                        <i data-lucide="globe" class="w-3.5 h-3.5"></i>
-                        موقع
-                    </a>
-                    <a href="https://www.youtube.com/@wade3store" target="_blank" class="social-btn text-[11px] font-bold txt-yt px-4 py-2.5 rounded-xl bg-yt border bg-yt-hover inline-flex items-center gap-1.5">
-                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        يوتيوب
-                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-btn text-[11px] font-bold txt-fb px-4 py-2.5 rounded-xl bg-fb border bg-fb-hover inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> فيسبوك</a>
+                    <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-btn text-[11px] font-bold txt-ig px-4 py-2.5 rounded-xl bg-ig border bg-ig-hover inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> انستا</a>
+                    <a href="https://www.tiktok.com/@wade3_store1" target="_blank" class="social-btn text-[11px] font-bold txt-tt px-4 py-2.5 rounded-xl bg-tt border bg-tt-hover inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .56.04.82.11V9.02a6.37 6.37 0 0 0-.82-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.16 8.16 0 0 0 4.76 1.52V6.79a4.85 4.85 0 0 1-1-.1z"/></svg> تيك توك</a>
+                    <a href="https://wade3-store.netlify.app/" target="_blank" class="social-btn text-[11px] font-bold txt-web px-4 py-2.5 rounded-xl bg-web border bg-web-hover inline-flex items-center gap-1.5"><i data-lucide="globe" class="w-3.5 h-3.5"></i> موقع</a>
+                    <a href="https://www.youtube.com/@wade3store" target="_blank" class="social-btn text-[11px] font-bold txt-yt px-4 py-2.5 rounded-xl bg-yt border bg-yt-hover inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> يوتيوب</a>
                 </div>
             </div>
         </div>
@@ -349,64 +314,16 @@
     <section id="portfolio" class="relative py-28 px-5 overflow-hidden">
         <div class="section-glow-l" style="top:30%;right:-100px"></div>
         <div class="section-glow-r" style="bottom:10%;left:-120px"></div>
-
         <div class="relative z-10 max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/8 bg-white/[.03] mb-5">
-                    <i data-lucide="trophy" class="w-4 h-4 text-indigo-400"></i>
-                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-[.2em]">أعمالنا</span>
-                </div>
-                <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-[900] tracking-tight mb-4">
-                    نماذج من <span class="text-gradient-warm">إبداعنا</span>
-                </h2>
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/8 bg-white/[.03] mb-5"><i data-lucide="trophy" class="w-4 h-4 text-indigo-400"></i><span class="text-[11px] font-bold text-slate-400 uppercase tracking-[.2em]">أعمالنا</span></div>
+                <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-[900] tracking-tight mb-4">نماذج من <span class="text-gradient-warm">إبداعنا</span></h2>
                 <p class="text-[15px] font-semibold text-slate-500 max-w-lg mx-auto leading-relaxed">بعض الأعمال التي نفّذناها بكل احترافية</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="card rounded-2xl overflow-hidden group observe-card">
-                    <div class="portfolio-wrap hide-bottom" style="aspect-ratio:16/9">
-                        <img src="https://media.discordapp.net/attachments/1512191583900925972/1518005464611426314/image.png?ex=6a385841&is=6a3706c1&hm=3cc6d5f5c7ae11c2cb4480a50b1f2b9d679c0c01a935a459f8a7564c7641a2e2&=&format=webp&quality=lossless&width=763&height=431" alt="متجر الكتروني" class="w-full h-full object-cover">
-                        <div class="grad-overlay"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,.5)]"></span>
-                            <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-[.15em]">مكتمل</span>
-                        </div>
-                        <h3 class="text-[16px] font-extrabold">متجر إلكتروني</h3>
-                        <p class="text-[12px] text-slate-600 mt-1 font-semibold">تصميم واجهة متجر احترافية وجذابة</p>
-                    </div>
-                </div>
-
-                <div class="card rounded-2xl overflow-hidden group observe-card">
-                    <div class="portfolio-wrap hide-bottom" style="aspect-ratio:16/9">
-                        <img src="https://media.discordapp.net/attachments/1512191583900925972/1518005465106087946/image.png?ex=6a385842&is=6a3706c2&hm=a7a335ce9dcd65c46deb3275c20ee51452e8ade58e94b06d9ec6597bc82b8496&=&format=webp&quality=lossless&width=763&height=431" alt="موقع استريمر" class="w-full h-full object-cover">
-                        <div class="grad-overlay"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,.5)]"></span>
-                            <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-[.15em]">مكتمل</span>
-                        </div>
-                        <h3 class="text-[16px] font-extrabold">موقع إلكتروني لاستريمر</h3>
-                        <p class="text-[12px] text-slate-600 mt-1 font-semibold">تصميم عصري مخصص للبث المباشر</p>
-                    </div>
-                </div>
-
-                <div class="card rounded-2xl overflow-hidden group observe-card">
-                    <div class="portfolio-wrap hide-bottom" style="aspect-ratio:16/9">
-                        <img src="https://media.discordapp.net/attachments/1512191583900925972/1518005522215866498/5c498fd5-6168-4074-ac3e-82ca307241d4.png?ex=6a38584f&is=6a3706cf&hm=44ffd88edab591bffb2a919043ef3a383ed58dcad3f5696d80032d0ad0c3d70b&=&format=webp&quality=lossless&width=816&height=459" alt="فيديو كليب" class="w-full h-full object-cover">
-                        <div class="grad-overlay"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,.5)]"></span>
-                            <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-[.15em]">مكتمل</span>
-                        </div>
-                        <h3 class="text-[16px] font-extrabold">أغنية وفيديو كليب</h3>
-                        <p class="text-[12px] text-slate-600 mt-1 font-semibold">إنتاج غناء مع فيديو كليب احترافي</p>
-                    </div>
-                </div>
+                <div class="card rounded-2xl overflow-hidden group observe-card"><div class="portfolio-wrap hide-bottom" style="aspect-ratio:16/9"><img src="https://media.discordapp.net/attachments/1512191583900925972/1518005464611426314/image.png?ex=6a385841&is=6a3706c1&hm=3cc6d5f5c7ae11c2cb4480a50b1f2b9d679c0c01a935a459f8a7564c7641a2e2&=&format=webp&quality=lossless&width=763&height=431" alt="متجر الكتروني" class="w-full h-full object-cover"><div class="grad-overlay"></div></div><div class="p-6"><div class="flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,.5)]"></span><span class="text-[10px] font-bold text-emerald-400 uppercase tracking-[.15em]">مكتمل</span></div><h3 class="text-[16px] font-extrabold">متجر إلكتروني</h3><p class="text-[12px] text-slate-600 mt-1 font-semibold">تصميم واجهة متجر احترافية وجذابة</p></div></div>
+                <div class="card rounded-2xl overflow-hidden group observe-card"><div class="portfolio-wrap hide-bottom" style="aspect-ratio:16/9"><img src="https://media.discordapp.net/attachments/1512191583900925972/1518005465106087946/image.png?ex=6a385842&is=6a3706c2&hm=a7a335ce9dcd65c46deb3275c20ee51452e8ade58e94b06d9ec6597bc82b8496&=&format=webp&quality=lossless&width=763&height=431" alt="موقع استريمر" class="w-full h-full object-cover"><div class="grad-overlay"></div></div><div class="p-6"><div class="flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,.5)]"></span><span class="text-[10px] font-bold text-emerald-400 uppercase tracking-[.15em]">مكتمل</span></div><h3 class="text-[16px] font-extrabold">موقع إلكتروني لاستريمر</h3><p class="text-[12px] text-slate-600 mt-1 font-semibold">تصميم عصري مخصص للبث المباشر</p></div></div>
+                <div class="card rounded-2xl overflow-hidden group observe-card"><div class="portfolio-wrap hide-bottom" style="aspect-ratio:16/9"><img src="https://media.discordapp.net/attachments/1512191583900925972/1518005522215866498/5c498fd5-6168-4074-ac3e-82ca307241d4.png?ex=6a38584f&is=6a3706cf&hm=44ffd88edab591bffb2a919043ef3a383ed58dcad3f5696d80032d0ad0c3d70b&=&format=webp&quality=lossless&width=816&height=459" alt="فيديو كليب" class="w-full h-full object-cover"><div class="grad-overlay"></div></div><div class="p-6"><div class="flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,.5)]"></span><span class="text-[10px] font-bold text-emerald-400 uppercase tracking-[.15em]">مكتمل</span></div><h3 class="text-[16px] font-extrabold">أغنية وفيديو كليب</h3><p class="text-[12px] text-slate-600 mt-1 font-semibold">إنتاج غناء مع فيديو كليب احترافي</p></div></div>
             </div>
         </div>
     </section>
@@ -416,122 +333,67 @@
     <!-- CONTACT -->
     <section id="contact" class="relative py-28 px-5 overflow-hidden">
         <div class="section-glow-r" style="top:20%;right:-80px"></div>
-
         <div class="relative z-10 max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/8 bg-white/[.03] mb-5">
-                    <i data-lucide="send" class="w-4 h-4 text-indigo-400"></i>
-                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-[.2em]">تواصل معنا</span>
-                </div>
-                <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-[900] tracking-tight mb-4">
-                    تابعنا على <span class="text-gradient">منصاتنا</span>
-                </h2>
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/8 bg-white/[.03] mb-5"><i data-lucide="send" class="w-4 h-4 text-indigo-400"></i><span class="text-[11px] font-bold text-slate-400 uppercase tracking-[.2em]">تواصل معنا</span></div>
+                <h2 class="text-[clamp(1.8rem,4vw,2.8rem)] font-[900] tracking-tight mb-4">تابعنا على <span class="text-gradient">منصاتنا</span></h2>
                 <p class="text-[15px] font-semibold text-slate-500 max-w-lg mx-auto leading-relaxed">تواصل معنا عبر أي منصة واسأل عن السعر مباشرة</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
                 <!-- Facebook -->
                 <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-card fb card rounded-2xl overflow-hidden group block">
-                    <div class="relative">
-                        <div class="h-40 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80" alt="Facebook" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c16] via-[#0c0c16]/60 to-transparent"></div>
-                        </div>
-                        <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
-                            <div class="w-16 h-16 rounded-2xl bg-[#1877F2]/15 border-2 border-[#1877F2]/30 flex items-center justify-center mb-4 group-hover:bg-[#1877F2]/25 group-hover:border-[#1877F2]/50 transition-all duration-300">
-                                <svg class="w-8 h-8 icon-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                            </div>
-                            <h3 class="text-[18px] font-extrabold mb-1">فيسبوك</h3>
-                            <p class="text-[13px] text-slate-500 font-semibold mb-4">Wade3 store</p>
-                            <div class="flex items-center gap-2 text-[12px] font-bold txt-fb">
-                                <span>تواصل عبر الخاص</span>
-                                <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
-                            </div>
-                        </div>
+                    <div class="sc-cover"><div class="fb-ui"><div class="fb-bar"><div class="fb-search"></div><div class="fb-dots"><span></span><span></span><span></span></div></div><div class="fb-body"><div class="fb-avatar"></div><div class="fb-lines"><span class="l1"></span><span class="l2"></span><span class="l3"></span><div class="fb-post"></div></div></div></div><div class="sc-fade"></div></div>
+                    <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-[#1877F2]/15 border-2 border-[#1877F2]/30 flex items-center justify-center mb-4 group-hover:bg-[#1877F2]/25 group-hover:border-[#1877F2]/50 transition-all duration-300"><svg class="w-8 h-8 icon-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div>
+                        <h3 class="text-[18px] font-extrabold mb-1">فيسبوك</h3>
+                        <p class="text-[13px] text-slate-500 font-semibold mb-4">Wade3 store</p>
+                        <div class="flex items-center gap-2 text-[12px] font-bold txt-fb"><span>تواصل عبر الخاص</span><i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i></div>
                     </div>
                 </a>
 
                 <!-- Instagram -->
                 <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-card ig card rounded-2xl overflow-hidden group block">
-                    <div class="relative">
-                        <div class="h-40 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&q=80" alt="Instagram" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c16] via-[#0c0c16]/60 to-transparent"></div>
-                        </div>
-                        <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#F77737]/15 via-[#E1306C]/15 to-[#833AB4]/15 border-2 border-[#E1306C]/30 flex items-center justify-center mb-4 group-hover:border-[#E1306C]/50 transition-all duration-300">
-                                <svg class="w-8 h-8 icon-ig" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                            </div>
-                            <h3 class="text-[18px] font-extrabold mb-1">انستاگرام</h3>
-                            <p class="text-[13px] text-slate-500 font-semibold mb-4">wade3 store</p>
-                            <div class="flex items-center gap-2 text-[12px] font-bold txt-ig">
-                                <span>تواصل عبر الخاص</span>
-                                <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
-                            </div>
-                        </div>
+                    <div class="sc-cover"><div class="ig-ui"><div class="ig-bar"><div class="ig-cam"></div><div class="ig-logo"></div><div class="ig-msg"></div></div><div class="ig-stories"><div class="ig-story s1"><div></div></div><div class="ig-story s2"><div></div></div><div class="ig-story s3"><div></div></div><div class="ig-story"><div></div></div><div class="ig-story"><div></div></div></div><div class="ig-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><div class="sc-fade"></div></div>
+                    <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#F77737]/15 via-[#E1306C]/15 to-[#833AB4]/15 border-2 border-[#E1306C]/30 flex items-center justify-center mb-4 group-hover:border-[#E1306C]/50 transition-all duration-300"><svg class="w-8 h-8 icon-ig" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+                        <h3 class="text-[18px] font-extrabold mb-1">انستاگرام</h3>
+                        <p class="text-[13px] text-slate-500 font-semibold mb-4">wade3 store</p>
+                        <div class="flex items-center gap-2 text-[12px] font-bold txt-ig"><span>تواصل عبر الخاص</span><i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i></div>
                     </div>
                 </a>
 
                 <!-- TikTok -->
                 <a href="https://www.tiktok.com/@wade3_store1" target="_blank" class="social-card tt card rounded-2xl overflow-hidden group block">
-                    <div class="relative">
-                        <div class="h-40 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80" alt="TikTok" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c16] via-[#0c0c16]/60 to-transparent"></div>
-                        </div>
-                        <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
-                            <div class="w-16 h-16 rounded-2xl bg-white/8 border-2 border-white/15 flex items-center justify-center mb-4 group-hover:bg-white/15 group-hover:border-white/30 transition-all duration-300">
-                                <svg class="w-8 h-8 icon-tt" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .56.04.82.11V9.02a6.37 6.37 0 0 0-.82-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.16 8.16 0 0 0 4.76 1.52V6.79a4.85 4.85 0 0 1-1-.1z"/></svg>
-                            </div>
-                            <h3 class="text-[18px] font-extrabold mb-1">تيك توك</h3>
-                            <p class="font-en text-[13px] text-slate-500 font-semibold mb-4" dir="ltr">@wade3_store1</p>
-                            <div class="flex items-center gap-2 text-[12px] font-bold txt-tt">
-                                <span>تواصل عبر الخاص</span>
-                                <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
-                            </div>
-                        </div>
+                    <div class="sc-cover"><div class="tt-ui"><div class="tt-top"><span class="tt-tab">Following</span><span class="tt-tab active">For You</span></div><div class="tt-video"></div><div class="tt-play"></div><div class="tt-side"><div class="tt-side-icon tt-heart"></div><div class="tt-side-icon"></div><div class="tt-side-icon"></div></div><div class="tt-bottom"><div class="tt-nav-icon"></div><div class="tt-nav-icon"></div><div class="tt-nav-icon tt-plus"></div><div class="tt-nav-icon"></div><div class="tt-nav-icon"></div></div></div><div class="sc-fade"></div></div>
+                    <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-white/8 border-2 border-white/15 flex items-center justify-center mb-4 group-hover:bg-white/15 group-hover:border-white/30 transition-all duration-300"><svg class="w-8 h-8 icon-tt" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .56.04.82.11V9.02a6.37 6.37 0 0 0-.82-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.16 8.16 0 0 0 4.76 1.52V6.79a4.85 4.85 0 0 1-1-.1z"/></svg></div>
+                        <h3 class="text-[18px] font-extrabold mb-1">تيك توك</h3>
+                        <p class="font-en text-[13px] text-slate-500 font-semibold mb-4" dir="ltr">@wade3_store1</p>
+                        <div class="flex items-center gap-2 text-[12px] font-bold txt-tt"><span>تواصل عبر الخاص</span><i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i></div>
                     </div>
                 </a>
 
                 <!-- Website -->
                 <a href="https://wade3-store.netlify.app/" target="_blank" class="social-card web card rounded-2xl overflow-hidden group block">
-                    <div class="relative">
-                        <div class="h-40 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Website" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c16] via-[#0c0c16]/60 to-transparent"></div>
-                        </div>
-                        <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
-                            <div class="w-16 h-16 rounded-2xl bg-indigo-500/15 border-2 border-indigo-500/30 flex items-center justify-center mb-4 group-hover:bg-indigo-500/25 group-hover:border-indigo-500/50 transition-all duration-300">
-                                <i data-lucide="globe" class="w-8 h-8 icon-web"></i>
-                            </div>
-                            <h3 class="text-[18px] font-extrabold mb-1">الموقع الإلكتروني</h3>
-                            <p class="font-en text-[13px] text-slate-500 font-semibold mb-4" dir="ltr">wade3-store.netlify.app</p>
-                            <div class="flex items-center gap-2 text-[12px] font-bold txt-web">
-                                <span>زيارة الموقع</span>
-                                <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
-                            </div>
-                        </div>
+                    <div class="sc-cover"><div class="web-ui"><div class="web-chrome"><div class="web-dots"><span class="rd"></span><span class="yl"></span><span class="gn"></span></div><div class="web-url"><div class="web-url-lock"></div><div class="web-url-text"></div></div></div><div class="web-content"><div class="web-hero"></div><div class="web-cards"><div class="web-card-item"></div><div class="web-card-item"></div><div class="web-card-item"></div></div><div class="web-lines" style="margin-top:4px"><span class="wl1"></span><span class="wl2"></span><span class="wl3"></span></div></div></div><div class="sc-fade"></div></div>
+                    <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-indigo-500/15 border-2 border-indigo-500/30 flex items-center justify-center mb-4 group-hover:bg-indigo-500/25 group-hover:border-indigo-500/50 transition-all duration-300"><i data-lucide="globe" class="w-8 h-8 icon-web"></i></div>
+                        <h3 class="text-[18px] font-extrabold mb-1">الموقع الإلكتروني</h3>
+                        <p class="font-en text-[13px] text-slate-500 font-semibold mb-4" dir="ltr">wade3-store.netlify.app</p>
+                        <div class="flex items-center gap-2 text-[12px] font-bold txt-web"><span>زيارة الموقع</span><i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i></div>
                     </div>
                 </a>
 
                 <!-- YouTube -->
                 <a href="https://www.youtube.com/@wade3store" target="_blank" class="social-card yt card rounded-2xl overflow-hidden group block">
-                    <div class="relative">
-                        <div class="h-40 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80" alt="YouTube" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c16] via-[#0c0c16]/60 to-transparent"></div>
-                        </div>
-                        <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
-                            <div class="w-16 h-16 rounded-2xl bg-red-500/15 border-2 border-red-500/30 flex items-center justify-center mb-4 group-hover:bg-red-500/25 group-hover:border-red-500/50 transition-all duration-300">
-                                <svg class="w-8 h-8 icon-yt" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                            </div>
-                            <h3 class="text-[18px] font-extrabold mb-1">يوتيوب</h3>
-                            <p class="font-en text-[13px] text-slate-500 font-semibold mb-4" dir="ltr">@wade3store</p>
-                            <div class="flex items-center gap-2 text-[12px] font-bold txt-yt">
-                                <span>تواصل عبر الخاص</span>
-                                <i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i>
-                            </div>
-                        </div>
+                    <div class="sc-cover"><div class="yt-ui"><div class="yt-bar"><div class="yt-burger"><span></span><span></span><span></span></div><div class="yt-logo"></div><div class="yt-search"></div></div><div class="yt-body"><div class="yt-thumb"><div class="yt-thumb-bar"></div></div><div class="yt-info"><div class="yt-ch-avatar"></div><div class="yt-ch-lines"><span class="yl1"></span><span class="yl2"></span></div></div></div></div><div class="sc-fade"></div></div>
+                    <div class="sc-wrap px-7 pb-7 -mt-10 relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-red-500/15 border-2 border-red-500/30 flex items-center justify-center mb-4 group-hover:bg-red-500/25 group-hover:border-red-500/50 transition-all duration-300"><svg class="w-8 h-8 icon-yt" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
+                        <h3 class="text-[18px] font-extrabold mb-1">يوتيوب</h3>
+                        <p class="font-en text-[13px] text-slate-500 font-semibold mb-4" dir="ltr">@wade3store</p>
+                        <div class="flex items-center gap-2 text-[12px] font-bold txt-yt"><span>تواصل عبر الخاص</span><i data-lucide="arrow-left" class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200"></i></div>
                     </div>
                 </a>
 
@@ -544,53 +406,33 @@
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg overflow-hidden border border-white/10">
-                        <img src="https://media.discordapp.net/attachments/1512191583900925972/1517972456240054302/ChatGPT_Image_20_2026_10_20_08_.png?ex=6a383984&is=6a36e804&hm=b67ff1e955d70f00dc137e7915e0ba6332b17b22a082bf7b8546c408670a1643&=&format=webp&quality=lossless&width=431&height=431" alt="Logo" class="w-full h-full object-cover">
-                    </div>
+                    <div class="w-8 h-8 rounded-lg overflow-hidden border border-white/10"><img src="https://media.discordapp.net/attachments/1512191583900925972/1517972456240054302/ChatGPT_Image_20_2026_10_20_08_.png?ex=6a383984&is=6a36e804&hm=b67ff1e955d70f00dc137e7915e0ba6332b17b22a082bf7b8546c408670a1643&=&format=webp&quality=lossless&width=431&height=431" alt="Logo" class="w-full h-full object-cover"></div>
                     <span class="text-[13px] font-bold text-slate-600">© 2025 <span class="font-en">Wade3 Store</span>. جميع الحقوق محفوظة.</span>
                 </div>
                 <div class="flex items-center gap-3">
-                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-fb">
-                        <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-ig">
-                        <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                    </a>
-                    <a href="https://www.tiktok.com/@wade3_store1" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-tt">
-                        <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .56.04.82.11V9.02a6.37 6.37 0 0 0-.82-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.16 8.16 0 0 0 4.76 1.52V6.79a4.85 4.85 0 0 1-1-.1z"/></svg>
-                    </a>
-                    <a href="https://wade3-store.netlify.app/" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-web">
-                        <i data-lucide="globe" class="w-[18px] h-[18px]"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@wade3store" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-yt">
-                        <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61591048504850&locale=ar_AR" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-fb"><svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="https://www.instagram.com/wade3_store/" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-ig"><svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    <a href="https://www.tiktok.com/@wade3_store1" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-tt"><svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .56.04.82.11V9.02a6.37 6.37 0 0 0-.82-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.16 8.16 0 0 0 4.76 1.52V6.79a4.85 4.85 0 0 1-1-.1z"/></svg></a>
+                    <a href="https://wade3-store.netlify.app/" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-web"><i data-lucide="globe" class="w-[18px] h-[18px]"></i></a>
+                    <a href="https://www.youtube.com/@wade3store" target="_blank" class="social-btn w-10 h-10 rounded-xl bg-white/[.03] border border-white/8 flex items-center justify-center text-slate-600 hover-yt"><svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top -->
-    <button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-7 left-7 w-11 h-11 rounded-xl glass flex items-center justify-center text-slate-500 hover:text-indigo-400 hover:border-indigo-500/25 transition-all duration-300 opacity-0 pointer-events-none z-40">
-        <i data-lucide="chevron-up" class="w-5 h-5"></i>
-    </button>
+    <button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-7 left-7 w-11 h-11 rounded-xl glass flex items-center justify-center text-slate-500 hover:text-indigo-400 hover:border-indigo-500/25 transition-all duration-300 opacity-0 pointer-events-none z-40"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
 
     <script>
         lucide.createIcons();
-
         const menuToggle=document.getElementById('menuToggle'),mobileNav=document.getElementById('mobileNav');
         let menuOpen=false;
         menuToggle.addEventListener('click',()=>{menuOpen=!menuOpen;mobileNav.classList.toggle('active',menuOpen)});
         document.querySelectorAll('.mob-link').forEach(l=>{l.addEventListener('click',()=>{menuOpen=false;mobileNav.classList.remove('active')})});
-
         document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
-
         const topBtn=document.getElementById('topBtn');
         window.addEventListener('scroll',()=>{topBtn.style.opacity=window.scrollY>500?'1':'0';topBtn.style.pointerEvents=window.scrollY>500?'auto':'none'});
-
         const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
         document.querySelectorAll('.observe-card').forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition=`opacity .6s cubic-bezier(.4,0,.2,1) ${i*.08}s,transform .6s cubic-bezier(.4,0,.2,1) ${i*.08}s,border-color .4s ease,box-shadow .4s ease`;obs.observe(el)});
-
         const secs=document.querySelectorAll('section[id]');
         window.addEventListener('scroll',()=>{let cur='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id});document.querySelectorAll('.nav-link').forEach(l=>{const isActive=l.getAttribute('href')===`#${cur}`;l.classList.toggle('text-white',isActive);l.classList.toggle('bg-white/5',isActive);l.classList.toggle('text-slate-400',!isActive)})});
     </script>
